@@ -1,5 +1,7 @@
 
+import Link from 'next/link';
 import Image from 'next/image';
+
 import corazon from 'public/corazon.png';
 import auto from 'public/auto.jpg';
 
@@ -20,13 +22,23 @@ import imagen_14 from 'public/image-gallery-14.jpg';
 import imagen_15 from 'public/image-gallery-15.jpg';
 import imagen_16 from 'public/image-gallery-16.jpg';
 
+const carrusel = [imagen_1,imagen_2,imagen_3,imagen_4,imagen_5,imagen_6,imagen_7,imagen_8,imagen_9,imagen_10,imagen_11,imagen_12,imagen_13,imagen_14,imagen_15,imagen_16];
+
+import bcibanco from 'public/bcibanco.png';
+import mutualdeseguros from 'public/mutualdeseguros.png';
+
 import bomberosamaericanavalparariso from 'public/bomberosamaericanavalparariso.jpg';
 import cruzroja from 'public/cruzroja.jpg';
 import fundacionapoyandote from 'public/fundacionapoyandote.jpg';
 import dehermes from 'public/dehermes.webp';
 
-import bcibanco from 'public/bcibanco.png';
-import mutualdeseguros from 'public/mutualdeseguros.png';
+const compraaqui = [
+    { image: cruzroja, href: '#' },
+    { image: dehermes, href: '#' },
+    { image: bomberosamaericanavalparariso, href: '#' },
+    { image: fundacionapoyandote, href: '#' }
+];
+
 
 export default function Page() {
     return (
@@ -53,26 +65,11 @@ export default function Page() {
             </section>
 
             <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 md:mt-28 mb-10 md:mb-16 max-w-screen-xl mx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-lg mx-auto">
-                <div className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
-                    <p><Image src={cruzroja} alt="" unoptimized className="mx-auto" /></p>
-                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
-                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
-                </div>
-                <div className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
-                    <p><Image src={dehermes} alt="" unoptimized className="mx-auto" /></p>
-                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
-                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
-                </div>
-                <div className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
-                    <p><Image src={bomberosamaericanavalparariso} alt="" unoptimized className="mx-auto" /></p>
-                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
-                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
-                </div>
-                <div className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
-                    <p><Image src={fundacionapoyandote} alt="" unoptimized className="mx-auto" /></p>
-                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
-                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
-                </div>
+                {compraaqui.map((item, index) => (<div key={index} className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
+                    <p><Image src={item.image} alt="" unoptimized className="mx-auto" /></p>
+                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <Link href={item.href} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</Link></p>
+                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <Link href={item.href} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</Link></p>
+                </div> ))}
             </section>
 
             <section className="text-center max-w-screen-lg mx-auto">
@@ -86,22 +83,7 @@ export default function Page() {
             <section className="text-center image-carousel max-w-screen-xl mx-auto">
                 <h2 id="tuaporte" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Tu aporte SOAP</h2>
                 <div className="mx-auto h-[377px] md:h-[610px] overflow-hidden relative carrousel-fondo">
-                    <Image src={imagen_1} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-100 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_2} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_3} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_4} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_5} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_6} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_7} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_8} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_9} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_10} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_11} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_12} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_13} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_14} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_15} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
-                    <Image src={imagen_16} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
+                {carrusel.map((item, index) => (<Image key={index} src={item} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />))}
                 </div>
             </section>
 
@@ -159,7 +141,7 @@ export default function Page() {
                             <label className=" font-medium text-lg block mt-8" for="mensaje">Mensaje</label>
                             <textarea className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" name="mensaje" id="mensaje" rows="3" required=""></textarea>
 
-                            <input className=" rounded-md py-2 px-8 font-bold text-lg mt-8 bg-[#22beeb]" type="submit" class="btn-envio" value="Enviar" />
+                            <input className=" rounded-md py-2 px-8 font-bold text-lg mt-8 bg-[#22beeb]" type="submit" value="Enviar" />
                         </form>
 
                     </div>
