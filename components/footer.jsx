@@ -6,6 +6,7 @@ import soapayuda from 'public/soapayuda .png';
 export function Footer() {
     return (
         <footer className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 pb-4 bg-footerGrey text-md font-medium text-center text-white">
+            
             <section className="flex flex-col justify-center">
                 <h3 className="flex-1 flex items-end min-h-[110px] justify-center">
                     <Image src={soapayuda} alt="" width="144" unoptimized className="mx-auto" />

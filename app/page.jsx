@@ -22,8 +22,11 @@ import imagen_16 from 'public/image-gallery-16.jpg';
 
 import bomberosamaericanavalparariso from 'public/bomberosamaericanavalparariso.jpg';
 import cruzroja from 'public/cruzroja.jpg';
-import fundacionapoyandome from 'public/fundacionapoyandome.jpg';
+import fundacionapoyandote from 'public/fundacionapoyandote.jpg';
 import dehermes from 'public/dehermes.webp';
+
+import bcibanco from 'public/bcibanco.png';
+import mutualdeseguros from 'public/mutualdeseguros.png';
 
 export default function Page() {
     return (
@@ -49,30 +52,26 @@ export default function Page() {
                 <p className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10">Actualmente <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> está presente con convenios en diferentes Instituciones y/o Fundaciones de <span className="text-[#22beeb] font-bold">ámbito social</span>.</p>
             </section>
 
-            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 md:mt-28 mb-10 md:mb-16 max-w-screen-xl mx-auto duration-300 ease-in-out">
-                <div className="px-20 py-10 sm:p-8 md:p-8 lg:p-1 duration-300 ease-in-out">
+            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 md:mt-28 mb-10 md:mb-16 max-w-screen-xl mx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-lg mx-auto">
+                <div className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
                     <p><Image src={cruzroja} alt="" unoptimized className="mx-auto" /></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
+                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
                 </div>
-                <div className="px-20 py-10 sm:p-8 md:p-8 lg:p-1 duration-300 ease-in-out">
+                <div className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
                     <p><Image src={dehermes} alt="" unoptimized className="mx-auto" /></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
+                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
                 </div>
-                <div className="px-20 py-10 sm:p-8 md:p-8 lg:p-1 duration-300 ease-in-out">
+                <div className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
                     <p><Image src={bomberosamaericanavalparariso} alt="" unoptimized className="mx-auto" /></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
+                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
                 </div>
-                <div className="px-20 py-10 sm:p-8 md:p-8 lg:p-1 duration-300 ease-in-out">
-                    <p><Image src={fundacionapoyandome} alt="" unoptimized className="mx-auto" /></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                <div className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
+                    <p><Image src={fundacionapoyandote} alt="" unoptimized className="mx-auto" /></p>
+                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
+                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <a href="" className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</a></p>
                 </div>
             </section>
 
@@ -84,7 +83,7 @@ export default function Page() {
                 <p className="text-left text-2xl md:text-3xl font-bold text-[#22beeb] m-7 ">4.- Hecho el pago ya has donado a la institución elegida</p>
             </section>
 
-            <section className="text-center image-carousel">
+            <section className="text-center image-carousel max-w-screen-xl mx-auto">
                 <h2 id="tuaporte" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Tu aporte SOAP</h2>
                 <div className="mx-auto h-[377px] md:h-[610px] overflow-hidden relative carrousel-fondo">
                     <Image src={imagen_1} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-100 transition-opacity duration-2000 image-item" />
@@ -106,7 +105,7 @@ export default function Page() {
                 </div>
             </section>
 
-            <section className="text-center ">
+            <section className="text-center max-w-screen-xl mx-auto">
                 <h2 id="contacto" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Contacto</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     <div className="p-4">
@@ -131,7 +130,7 @@ export default function Page() {
                         <p className="mt-2 md:mt-4 font-bold text-socialBlue text-base md:text-lg">(32) 2233491</p>
                         </div>
                     </div>
-                    <div className="p-4 bg-[#ddd]">
+                    <div className="pt-4 pr-4 pb-10 pl-4 bg-[#ddd]">
 
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="2211d83c-52ec-4484-a609-6fd57c3c47f1" />
@@ -160,7 +159,7 @@ export default function Page() {
                             <label className=" font-medium text-lg block mt-8" for="mensaje">Mensaje</label>
                             <textarea className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" name="mensaje" id="mensaje" rows="3" required=""></textarea>
 
-                            <input className=" rounded-md py-2 px-8 font-bold text-lg mt-2 bg-[#22beeb]" type="submit" class="btn-envio" value="Enviar" />
+                            <input className=" rounded-md py-2 px-8 font-bold text-lg mt-8 bg-[#22beeb]" type="submit" class="btn-envio" value="Enviar" />
                         </form>
 
                     </div>
