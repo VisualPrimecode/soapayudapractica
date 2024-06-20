@@ -42,7 +42,6 @@ export function Footer() {
                 Av. Colón 3192. Valparaíso</p>
                 </div>
             </section>
-            <script src="https://web3forms.com/client/script.js"></script>
         </footer>
     );
 };

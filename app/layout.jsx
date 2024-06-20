@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
-                <script src='/image-carousel.js' defer></script>
-                <link rel="stylesheet" href='/styles.css' />
+                <script src="/image-carousel.js" defer></script>
+                <link rel="stylesheet" href="/styles.css" />
             </head>
             <body >
                 <Header />
