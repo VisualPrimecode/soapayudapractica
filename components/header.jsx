@@ -3,10 +3,10 @@ import Link from 'next/link';
 import soapayuda from 'public/soapayuda .png';
 
 const navItems = [
-    { linkText: '¿Quiénes somos?', href: '#' },
-    { linkText: 'Ayuda Social', href: '#' },
-    { linkText: 'Tu aporte SOAP', href: '#'},
-    { linkText: 'Contacto', href: '#' }
+    { linkText: '¿Quiénes somos?', href: '#quienesomos' },
+    { linkText: 'Ayuda Social', href: '#ayudasocial' },
+    { linkText: 'Tu aporte SOAP', href: '#tuaporte'},
+    { linkText: 'Contacto', href: '#contacto' }
 ];
 
 export function Header() {

@@ -40,12 +40,12 @@ export default function Page() {
             </section>
 
             <section className="text-center max-w-screen-lg mx-auto">
-                <h2 className="text-3xl md:text-5xl font-bold text-[#1e5db2] mt-10 md:mt-16 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />¿Quiénes somos?</h2>
+                <h2 id="quienesomos" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-10 md:mt-16 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />¿Quiénes somos?</h2>
                 <p className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10"><span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> nace bajo el concepto de ayudar a diversas instituciones y/o fundaciones que mediante la venta del Seguro Obligatorio puedan recibir donaciones con el objetivo de continuar con sus labores sociales.</p>
                 <p className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10"><span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> proviene de una red de venta que trabaja para prestar el mejor servicio hace más de 20 años con casa matriz en la ciudad de Valparaíso.</p>
                 <p className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10"><span className="text-[#1e5db2] font-bold">Nuestra VISIÓN es</span> <span className="text-[#22beeb] font-bold">AYUDAR</span> a más instituciónes y/o Fundaciones mediante la venta online del Seguro Obligatorio <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span>.</p>
                 <p className="text-3xl md:text-5xl font-serif font-bold italic mt-16 mr-20 mb-20 ml-20"><span className="text-[#1e5db2]">Súmate </span><span className="text-[#22beeb]">a esta gran labor</span></p>
-                <h2 className="text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Ayuda Social</h2>
+                <h2 id="ayudasocial" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Ayuda Social</h2>
                 <p className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10">Actualmente <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> está presente con convenios en diferentes Instituciones y/o Fundaciones de <span className="text-[#22beeb] font-bold">ámbito social</span>.</p>
             </section>
 
@@ -85,7 +85,7 @@ export default function Page() {
             </section>
 
             <section className="text-center image-carousel">
-                <h2 className="text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Tu aporte SOAP</h2>
+                <h2 id="tuaporte" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Tu aporte SOAP</h2>
                 <div className="mx-auto h-[377px] md:h-[610px] overflow-hidden relative carrousel-fondo">
                     <Image src={imagen_1} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-100 transition-opacity duration-2000 image-item" />
                     <Image src={imagen_2} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />
@@ -107,7 +107,7 @@ export default function Page() {
             </section>
 
             <section className="text-center ">
-                <h2 className="text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Contacto</h2>
+                <h2 id="contacto" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Contacto</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     <div className="p-4">
                         <div className="flex flex-col justify-center h-full">

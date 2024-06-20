@@ -5,6 +5,9 @@ module.exports = {
     content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
+            scrollMargin: {
+              'header': '4rem', // Adjust this value based on the height of your fixed menu
+            },
             backgroundImage: {
                 'grid-pattern': "linear-gradient(to bottom, theme('colors.neutral.950 / 0%'), theme('colors.neutral.950 / 100%')), url('/images/noise.png')"
             },
@@ -25,6 +28,7 @@ module.exports = {
     },
     variants: {
       extend: {
+        scrollMargin: ['responsive'],
         backgroundColor: ['hover'], // Enable hover variants for backgroundColor
       },
     },
