@@ -9,12 +9,24 @@ module.exports = {
                 'grid-pattern': "linear-gradient(to bottom, theme('colors.neutral.950 / 0%'), theme('colors.neutral.950 / 100%')), url('/images/noise.png')"
             },
             colors: {
-                neutral: colors.neutral
+                neutral: colors.neutral,
+                socialBlue: '#1e5db2',
+                purple: 'rgb(128, 0, 128)',
+                footerGrey: '#909191'
             },
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans]
+                sans: ['Helvetica Neue', 'Arial', 'Inter', ...defaultTheme.fontFamily.sans],
+                serif: ['Georgia', 'serif'],
+            },
+            boxShadow: {
+              'text': '0 2px 0 rgba(0, 0, 0, 0.5)',
             }
         }
+    },
+    variants: {
+      extend: {
+        backgroundColor: ['hover'], // Enable hover variants for backgroundColor
+      },
     },
     daisyui: {
         themes: [
