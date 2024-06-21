@@ -82,7 +82,7 @@ export default function Page() {
 
             <section className=" h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px] overflow-hidden">
                 <div className="absolute inset-0 overflow-hidden h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px]">
-                    <Image src={auto} unoptimized alt="" className="object-cover w-full h-full" style={{ clipPath: 'inset(0px 0px 8% 0px)' }} />
+                    <Image src={auto} unoptimized alt="" className="object-cover w-full h-full"  />
                 </div>
                 <div className="relative z-10 text-left ml-10 md:ml-20 xl:ml-30 text-white mt-20 md:mt-40 xl:mt-60 duration-300 ease-in-out">
                     <h2 className="uppercase text-center font-extrabold text-md md:text-2xl lg:text-3xl text-[#1e5db2] md:border-8 border-4 border-[yellow] block w-[200px] md:w-[300px] lg:w-[400px] p-2 md:p-4 duration-300 ease-in-out" style={{ borderRadius: '50%' }}>Ayuda con tu<br/>seguro<br/>obligatorio</h2>
