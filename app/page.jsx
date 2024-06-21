@@ -111,7 +111,7 @@ export default function Page() {
             {showInfoBox && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 z-50 duration-300 ease-in-out">
                     <div id="infoblock" className="bg-white p-16 rounded-xl text-center shadow-2xl z-50 ">
-                        <p className="text-center"><Image src={currentImage} alt="" className="mx-auto w-[89px]" /></p>
+                        <p className="text-center"><Image src={currentImage} alt="" className="mx-auto w-[89px] sm:w-[144px]" /></p>
                         <p className="md:text-2xl text-md text-black font-medium text-center">{infoContent}</p>
                         <p className="mt-12 text-base md:text-md text-[#888] font-medium text-center cursor-pointer" onClick={closeInfoBox}>Cerrar</p>
                     </div>
