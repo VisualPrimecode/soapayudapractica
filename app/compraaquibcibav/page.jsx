@@ -5,7 +5,7 @@ import Image from 'next/image';
 import bcibanco from 'public/bcibanco.png';
 
 export const metadata = {
-    title: 'Payment'
+    title: 'BCI | Bomberos Americana Valparaiso'
 };
 
 export default async function Page() {

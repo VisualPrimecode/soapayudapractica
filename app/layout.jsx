@@ -15,14 +15,6 @@ export default function RootLayout({ children }) {
             <head>
                 <script src="/image-carousel.js" defer></script>
                 <link rel="stylesheet" href="/styles.css" />
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLZ32T20BM"></script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments)}
-                    gtag('js', new Date());
-
-                    gtag('config', 'G-TLZ32T20BM');
-                </script>
             </head>
             <body >
                 {children}

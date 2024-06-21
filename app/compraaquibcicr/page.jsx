@@ -5,7 +5,7 @@ import Image from 'next/image';
 import bcibanco from 'public/bcibanco.png';
 
 export const metadata = {
-    title: 'Payment'
+    title: 'BCI | Cruz Roja'
 };
 
 export default async function Page() {

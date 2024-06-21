@@ -5,7 +5,7 @@ import Image from 'next/image';
 import mutualdeseguros from 'public/mutualdeseguros.png';
 
 export const metadata = {
-    title: 'Payment'
+    title: 'Mutal de Seguridad | DHERMES'
 };
 
 export default async function Page() {
