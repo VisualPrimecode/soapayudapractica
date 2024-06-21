@@ -53,7 +53,7 @@ export default async function Page() {
                     </div>
 
                 </div>
-                <p className=" text-center m-8 px-8 max-w-screen-sm mx-auto"><Link href="" className="inline-block rounded-full px-4 w-[100%] pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Paga to SOAP aquí</Link></p>
+                <p className=" text-center m-8 px-8 max-w-screen-sm mx-auto"><Link href="https://soapweb.bciseguros.cl/web/DatosVehiculo?Convenios=EBE95AA36E47B33FD608C5BFE58844B6" className="inline-block rounded-full px-4 w-[100%] pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Paga to SOAP aquí</Link></p>
             </section>
 
 
