@@ -5,7 +5,7 @@ import Image from 'next/image';
 import bcibanco from 'public/bcibanco.png';
 
 export const metadata = {
-    title: 'BCI | Bomberos Americana Valparaiso'
+    title: 'BCI | Bomberos Americana Valparaiso | Soap Ayuda'
 };
 
 export default async function Page() {

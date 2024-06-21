@@ -49,7 +49,6 @@ const compraaqui = [
     { image: fundacionapoyandote, fundacion: 'fa', info: 'Fundación Apoyándote está conformada por padres con hijos en condición de Espectro Autista y fue creada con el objetivo de apoyar a las familias que no puedan costear los tratamientos que tanto cuesta pagar.' }
 ];
 
-
 export default function Page() {
     const [currentImage, setCurrentImage] = useState(null);
     const [showInfoBox, setShowInfoBox] = useState(false);
@@ -65,6 +64,7 @@ export default function Page() {
         setShowInfoBox(false);
         setCurrentImage(null);
     };
+
 
 
     return (

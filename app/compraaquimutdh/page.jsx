@@ -5,7 +5,7 @@ import Image from 'next/image';
 import mutualdeseguros from 'public/mutualdeseguros.png';
 
 export const metadata = {
-    title: 'Mutal de Seguridad | DHERMES'
+    title: 'Mutal de Seguros | DHERMES | Soap Ayuda'
 };
 
 export default async function Page() {

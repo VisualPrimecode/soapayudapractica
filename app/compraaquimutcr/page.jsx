@@ -5,7 +5,7 @@ import Image from 'next/image';
 import mutualdeseguros from 'public/mutualdeseguros.png';
 
 export const metadata = {
-    title: 'Mutal de Seguridad | Cruz Roja'
+    title: 'Mutal de Seguros | Cruz Roja | Soap Ayuda'
 };
 
 export default async function Page() {

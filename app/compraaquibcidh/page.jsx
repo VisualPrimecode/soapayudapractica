@@ -5,7 +5,7 @@ import Image from 'next/image';
 import bcibanco from 'public/bcibanco.png';
 
 export const metadata = {
-    title: 'BCI | DHERMES'
+    title: 'BCI | DHERMES | Soap Ayuda'
 };
 
 export default async function Page() {
