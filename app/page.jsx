@@ -1,4 +1,6 @@
+"use client";
 
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -41,14 +43,29 @@ import fundacionapoyandote from 'public/fundacionapoyandote.jpg';
 import dehermes from 'public/dehermes.webp';
 
 const compraaqui = [
-    { image: cruzroja, fundacion: 'cr' },
-    { image: dehermes, fundacion: 'dh' },
-    { image: bomberosamaericanavalparariso, fundacion: 'bav' },
-    { image: fundacionapoyandote, fundacion: 'fa' }
+    { image: cruzroja, fundacion: 'cr', info: 'La Cruz Roja Chilena es una institución humanitaria y voluntaria que brinda apoyo en situaciones de emergencia y promueve la salud y el bienestar de la sociedad.' },
+    { image: dehermes, fundacion: 'dh', info: 'DHERMES es un Refugio de Animales con 19 años resguardando a cientos de perritos abandonados y vulnerables que buscan hogar.' },
+    { image: bomberosamaericanavalparariso, fundacion: 'bav', info: 'La Primera Compañía de Bomberos de Valparaiso fue fundada en 1851.Comenzó con 151 voluntarios, todos connotados porteños y en su mayoría ingleses y norteamericanos. En la actualidad están conformadas por más de 50 primerinos, quienes día a día permanecen atentos al ulular de la sirena para responder si el deber llama.' },
+    { image: fundacionapoyandote, fundacion: 'fa', info: 'Fundación Apoyándote está conformada por padres con hijos en condición de Espectro Autista y fue creada con el objetivo de apoyar a las familias que no puedan costear los tratamientos que tanto cuesta pagar.' }
 ];
 
 
 export default function Page() {
+    const [currentImage, setCurrentImage] = useState(null);
+    const [showInfoBox, setShowInfoBox] = useState(false);
+    const [infoContent, setInfoContent] = useState('');
+
+    const openInfoBox = (info,image) => {
+        setCurrentImage(image);
+        setInfoContent(info);
+        setShowInfoBox(true);
+    };
+
+    const closeInfoBox = () => {
+        setShowInfoBox(false);
+        setCurrentImage(null);
+    };
+
 
     return (
 
@@ -85,11 +102,22 @@ export default function Page() {
 
             <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-16 md:mt-28 mb-10 md:mb-16 max-w-screen-xl mx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-lg mx-auto">
                 {compraaqui.map((item, index) => (<div key={index} className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
-                    <p><Image src={item.image} alt="" unoptimized className="mx-auto" /></p>
+                    <p className="cursor-pointer rounded-lg overflow-hidden hover:border-[#1e5db2] border-2 border-transparent duration-300 ease-in-out" onClick={() => openInfoBox(item.info, item.image)}><Image src={item.image} alt="" unoptimized className="mx-auto" /></p>
                     <p className="mt-8 nowrap"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <Link href={`/compraaquimut${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
                     <p className="mt-4 nowrap"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <Link href={`/compraaquibci${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
                 </div> ))}
             </section>
+
+            {showInfoBox && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 z-50 duration-300 ease-in-out">
+                    <div id="infoblock" className="bg-white p-16 rounded-xl text-center shadow-2xl z-50 ">
+                        <p className="text-center"><Image src={currentImage} alt="" className="mx-auto w-[89px]" /></p>
+                        <p className="md:text-2xl text-md text-black font-medium text-center">{infoContent}</p>
+                        <p className="mt-12 text-base md:text-md text-[#888] font-medium text-center cursor-pointer" onClick={closeInfoBox}>Cerrar</p>
+                    </div>
+                </div>
+            )}
+
 
             <section className="text-center max-w-screen-lg mx-auto">
                 <h2 className="text-3xl md:text-5xl font-bold text-[#22beeb] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />¿Cómo funciona?</h2>
