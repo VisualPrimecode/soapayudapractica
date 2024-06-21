@@ -4,6 +4,14 @@ import Image from 'next/image';
 
 import corazon from 'public/corazon.png';
 import auto from 'public/auto.jpg';
+import soapayuda from 'public/soapayuda .png';
+
+const navItems = [
+    { linkText: '¿Quiénes somos?', href: '#quienesomos' },
+    { linkText: 'Ayuda Social', href: '#ayudasocial' },
+    { linkText: 'Tu aporte SOAP', href: '#tuaporte'},
+    { linkText: 'Contacto', href: '#contacto' }
+];
 
 import imagen_1 from 'public/image-gallery-1.jpg';
 import imagen_2 from 'public/image-gallery-2.jpg';
@@ -33,19 +41,30 @@ import fundacionapoyandote from 'public/fundacionapoyandote.jpg';
 import dehermes from 'public/dehermes.webp';
 
 const compraaqui = [
-    { image: cruzroja, href: '#' },
-    { image: dehermes, href: '#' },
-    { image: bomberosamaericanavalparariso, href: '#' },
-    { image: fundacionapoyandote, href: '#' }
+    { image: cruzroja, fundacion: 'cr' },
+    { image: dehermes, fundacion: 'dh' },
+    { image: bomberosamaericanavalparariso, fundacion: 'bav' },
+    { image: fundacionapoyandote, fundacion: 'fa' }
 ];
 
 
 export default function Page() {
-    return (
-        <main className="text-center">
 
-            <section className=" h-[377px] sm:h-[453px] md:h-[529px] lg:h-[610px] overflow-hidden">
-                <div className="absolute inset-0 overflow-hidden h-[377px] sm:h-[453px] md:h-[529px] lg:h-[610px]">
+    return (
+
+        <main className="text-center">
+            <nav className="absolute top-0 left-0 flex items-center justify-center pt-2 md:pt-4 pb-2 md:pb-4 z-10 w-[100%] bg-white bg-opacity-50">
+                <Image src={soapayuda} alt="SOAP Ayuda" className="hidden sm:inline-block sm:w-[68px] md:w-[144px] mr-8" />
+                {!!navItems?.length && (
+            <ul className="flex gap-2 sm:gap-4 md:gap-5">
+                {navItems.map((item, index) => (<li key={index}>
+                    <Link href={item.href} className="whitespace-nowrap inline-block text-[#1e5db2] text-sm md:text-lg font-bold no-underline hover:underline duration-300 ease-in-out hover:text-[#22beeb] ">{item.linkText}</Link>
+                </li>
+            ))}</ul>
+            )}</nav>
+
+            <section className=" h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px] overflow-hidden">
+                <div className="absolute inset-0 overflow-hidden h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px]">
                     <Image src={auto} unoptimized alt="" className="object-cover w-full h-full" style={{ clipPath: 'inset(0px 0px 8% 0px)' }} />
                 </div>
                 <div className="relative z-10 text-left ml-10 md:ml-20 xl:ml-30 text-white mt-20 md:mt-40 xl:mt-60 duration-300 ease-in-out">
@@ -64,11 +83,11 @@ export default function Page() {
                 <p className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10">Actualmente <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> está presente con convenios en diferentes Instituciones y/o Fundaciones de <span className="text-[#22beeb] font-bold">ámbito social</span>.</p>
             </section>
 
-            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 md:mt-28 mb-10 md:mb-16 max-w-screen-xl mx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-lg mx-auto">
+            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-16 md:mt-28 mb-10 md:mb-16 max-w-screen-xl mx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-lg mx-auto">
                 {compraaqui.map((item, index) => (<div key={index} className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
                     <p><Image src={item.image} alt="" unoptimized className="mx-auto" /></p>
-                    <p className="mt-8"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <Link href={item.href} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</Link></p>
-                    <p className="mt-4"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <Link href={item.href} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-xl md:text-1xl no-underline font-medium" >Compra aquí</Link></p>
+                    <p className="mt-8 nowrap"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <Link href={`/compraaquimut${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
+                    <p className="mt-4 nowrap"><Image src={bcibanco} alt="" unoptimized className="inline-block w-8 mr-2" /> <Link href={`/compraaquibci${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
                 </div> ))}
             </section>
 

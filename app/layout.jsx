@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import { Footer } from '../components/footer';
-import { Header } from '../components/header';
 
 
 export const metadata = {
@@ -18,7 +17,6 @@ export default function RootLayout({ children }) {
                 <link rel="stylesheet" href="/styles.css" />
             </head>
             <body >
-                <Header />
                 {children}
                 <Footer />
             </body>
