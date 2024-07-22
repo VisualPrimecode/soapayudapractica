@@ -32,8 +32,6 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
-                <script src="/image-carousel.js" defer></script>
-                <link rel="stylesheet" href="/styles.css" />
                 <title>{metadata.title.default}</title>
             </head>
             <body >

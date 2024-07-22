@@ -8,31 +8,14 @@ import corazon from 'public/corazon.png';
 import auto from 'public/auto.jpg';
 import soapayuda from 'public/soapayuda .png';
 
+import CarruselImages from 'components/carrusel';
+
 const navItems = [
     { linkText: '¿Quiénes somos?', href: '#quienesomos' },
     { linkText: 'Ayuda Social', href: '#ayudasocial' },
     { linkText: 'Tu aporte SOAP', href: '#tuaporte'},
     { linkText: 'Contacto', href: '#contacto' }
 ];
-
-import imagen_1 from 'public/image-gallery-1.jpg';
-import imagen_2 from 'public/image-gallery-2.jpg';
-import imagen_3 from 'public/image-gallery-3.jpg';
-import imagen_4 from 'public/image-gallery-4.jpg';
-import imagen_5 from 'public/image-gallery-5.jpg';
-import imagen_6 from 'public/image-gallery-6.jpg';
-import imagen_7 from 'public/image-gallery-7.jpg';
-import imagen_8 from 'public/image-gallery-8.jpg';
-import imagen_9 from 'public/image-gallery-9.jpg';
-import imagen_10 from 'public/image-gallery-10.jpg';
-import imagen_11 from 'public/image-gallery-11.jpg';
-import imagen_12 from 'public/image-gallery-12.jpg';
-import imagen_13 from 'public/image-gallery-13.jpg';
-import imagen_14 from 'public/image-gallery-14.jpg';
-import imagen_15 from 'public/image-gallery-15.jpg';
-import imagen_16 from 'public/image-gallery-16.jpg';
-
-const carrusel = [imagen_1,imagen_2,imagen_3,imagen_4,imagen_5,imagen_6,imagen_7,imagen_8,imagen_9,imagen_10,imagen_11,imagen_12,imagen_13,imagen_14,imagen_15,imagen_16];
 
 import bcibanco from 'public/bcibanco.png';
 import mutualdeseguros from 'public/mutualdeseguros.png';
@@ -100,7 +83,7 @@ export default function Page() {
                 <p className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10">Actualmente <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> está presente con convenios en diferentes Instituciones y/o Fundaciones de <span className="text-[#22beeb] font-bold">ámbito social</span>.</p>
             </section>
 
-            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-16 md:mt-28 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-lg mx-auto">
+            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-16 md:mt-28 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-xl mx-auto rounded-none sm:rounded-none md:rounded-none lg:rounded-none xl:rounded-xl ">
                 {compraaqui.map((item, index) => (<div key={index} className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 duration-300 ease-in-out bg-white rounded-lg">
                     <p className="cursor-pointer rounded-lg overflow-hidden hover:border-[#1e5db2] border-2 border-transparent duration-300 ease-in-out" onClick={() => openInfoBox(item.info, item.image)}><Image src={item.image} alt="" unoptimized className="mx-auto" /></p>
                     <p className="mt-8 nowrap"><Image src={mutualdeseguros} alt="" unoptimized className="inline-block w-8 mr-2" /> <Link href={`/compraaquimut${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
@@ -126,11 +109,9 @@ export default function Page() {
                 <p className="text-left text-2xl md:text-3xl font-bold text-[#22beeb] m-7 ">4.- Hecho el pago ya has donado a la institución elegida</p>
             </section>
 
-            <section className="text-center image-carousel max-w-screen-xl mx-auto">
+            <section className="text-center max-w-screen-xl mx-auto">
                 <h2 id="tuaporte" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><Image src={corazon} alt="" unoptimized className="inline-block mr-2 w-[90px] md:w-[150px]" />Tu aporte SOAP</h2>
-                <div className="mx-auto h-[377px] md:h-[610px] overflow-hidden relative carrousel-fondo">
-                {carrusel.map((item, index) => (<Image key={index} src={item} alt="" className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-2000 image-item" />))}
-                </div>
+                <CarruselImages />
             </section>
 
             <section className="text-center max-w-screen-md mx-auto mb-0 sm:mb-0 md:mb-10 lg:mb-10">
