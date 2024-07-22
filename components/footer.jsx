@@ -4,7 +4,7 @@ import soapayuda from 'public/soapayuda .png';
 
 export function Footer() {
     return (
-        <footer className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 pb-4 bg-footerGrey text-md font-medium text-center text-white">
+        <footer className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 pb-4 bg-footerGrey text-md font-medium text-center text-white">
             
             <section className="flex flex-col justify-center">
                 <h3 className="flex-1 flex items-end min-h-[110px] justify-center">
@@ -34,6 +34,7 @@ export function Footer() {
                 15:00 hrs. a 18:00 hrs.</p>
                 </div>
             </section>
+            {/*
             <section className="flex flex-col justify-center">
                 <h3 className="font-semibold text-2xl text-center flex-1 flex items-end min-h-[110px] justify-center">Datos de contacto</h3>
                 <div className="flex-1 items-top min-h-[144px]">
@@ -41,7 +42,7 @@ export function Footer() {
                 Teléfono (32) 2233 491<br/>
                 Av. Colón 3192. Valparaíso</p>
                 </div>
-            </section>
+            </section> */}
         </footer>
     );
 };
