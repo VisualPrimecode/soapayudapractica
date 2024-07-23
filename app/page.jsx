@@ -78,8 +78,8 @@ export default function Page() {
                     <Image src={auto} unoptimized alt="" className="object-cover w-full h-full"  />
                 </div>
                 <div className="relative z-10 text-left ml-10 md:ml-20 xl:ml-30 text-white mt-20 md:mt-40 xl:mt-60 duration-300 ease-in-out">
-                    <h2 className="uppercase text-center font-extrabold text-md md:text-2xl lg:text-3xl text-[#1e5db2] md:border-8 border-4 border-[yellow] block w-[200px] md:w-[300px] lg:w-[400px] p-2 md:p-4 duration-300 ease-in-out" style={{ borderRadius: '50%' }}>Ayuda con tu<br/>seguro<br/>obligatorio</h2>
-                    <p className="uppercase text-center font-extrabold text-md md:text-2xl lg:text-3xl text-[#1e5db2] block w-[200px] md:w-[300px] lg:w-[400px] mt-2 md:mt-4 duration-300 ease-in-out"><span className=" bg-white bg-opacity-50 block p-1 md:p-2 transform -translate-x-5" style={{ clipPath: 'polygon(10% 0, 0 50%, 10% 100%, 100% 100%, 100% 0)' }} >Compra tu Soap</span> <span className=" bg-[#22beeb] block p-1 md:p-2 transform translate-x-5" style={{ clipPath: 'polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0% 100%)' }}>y haz tu donación</span></p>
+                    <h2 data-aos="fade-left" className="uppercase text-center font-extrabold text-md md:text-2xl lg:text-3xl text-[#1e5db2] md:border-8 border-4 border-[yellow] block w-[200px] md:w-[300px] lg:w-[400px] p-2 md:p-4 duration-300 ease-in-out" style={{ borderRadius: '50%' }}>Ayuda con tu<br/>seguro<br/>obligatorio</h2>
+                    <p data-aos="flip-right" className="uppercase text-center font-extrabold text-md md:text-2xl lg:text-3xl text-[#1e5db2] block w-[200px] md:w-[300px] lg:w-[400px] mt-2 md:mt-4 duration-300 ease-in-out"><span className=" bg-white bg-opacity-50 block p-1 md:p-2 transform -translate-x-5" style={{ clipPath: 'polygon(10% 0, 0 50%, 10% 100%, 100% 100%, 100% 0)' }} >Compra tu Soap</span> <span className=" bg-[#22beeb] block p-1 md:p-2 transform translate-x-5" style={{ clipPath: 'polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0% 100%)' }}>y haz tu donación</span></p>
                 </div>
             </section>
 
