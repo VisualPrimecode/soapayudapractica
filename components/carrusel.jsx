@@ -38,19 +38,11 @@ const carrusel = [
   imagen_16
 ];
 
-const preloadImages = (imageArray) => {
-  imageArray.forEach((image) => {
-    const img = new window.Image();
-    img.src = image.src;
-  });
-};
-
 export function CarruselImages() {
   const imageRefs = useRef([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    preloadImages(carrusel);
 
     const intervalId = setInterval(() => {
       setActiveIndex(prevIndex => (prevIndex + 1) % carrusel.length);
@@ -62,7 +54,7 @@ export function CarruselImages() {
   return (
     <div className="bg-[url('/image-gallery-1.jpg')] bg-cover bg-center bg-no-repeat mx-auto h-[377px] md:h-[610px] overflow-hidden relative rounded-none sm:rounded-none md:rounded-none lg:rounded-none xl:rounded-xl">
       {carrusel.map((item, index) => (
-        <Image
+        <img
           key={index}
           src={item.src}
           alt={`Carousel image ${index + 1}`}

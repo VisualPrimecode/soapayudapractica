@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import mutualdeseguros from 'public/mutualdeseguros.png';
+import mutualdeseguros from '/public/mutualdeseguros.png';
 
 export const metadata = {
     title: 'Mutal de Seguros | Fundación Apoyándote | Soap Ayuda'
@@ -15,7 +15,7 @@ export default async function Page() {
             <nav className="text-center block my-16"><Link className="inline-block py-2 px-8 mx-auto bg-[#1e5db2] text-white text-center uppercase text-bold text-sm no-underline" href="/#ayudasocial" style={{ clipPath: 'polygon(10% 0, 0 50%, 10% 100%, 100% 100%, 100% 0)' }} >Volver</Link></nav>
 
             <section className=" text-center mt-16 mb-24 max-w-screen-lg mx-auto">
-                <p className=" text-center m-4"><Image src={mutualdeseguros} className=" mx-auto h-[89px] sm:h-[144px] w-auto duration-300 ease-in-out block"/></p>
+                <p className=" text-center m-4"><img alt='' src={mutualdeseguros.src} className=" mx-auto h-[89px] sm:h-[144px] w-auto duration-300 ease-in-out block"/></p>
                 <h3 className="text-center m-8 font-extrabold text-lg md:text-xl lg:text-1xl text-[#1e5db2] duration-300 ease-in-out block" >Lista de precios SOAP vehículos particulares (Vigencia desde 01/04/2024)</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 my-10 text-center m-4 font-bold text-lg">
                     <div className=" text-left mx-8 text-lg md:text-xl duration-300 ease-in-out block">
