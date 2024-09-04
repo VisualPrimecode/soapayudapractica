@@ -16,7 +16,7 @@ import 'aos/dist/aos.css';
 const navItems = [
     { linkText: '¿Quiénes somos?', href: '#quienesomos' },
     { linkText: 'Ayuda Social', href: '#ayudasocial' },
-    { linkText: 'Tu aporte SOAP', href: '#tuaporte'},
+    { linkText: 'Tu aporte SOAP', href: '#tuaporte' },
     { linkText: 'Contacto', href: '#contacto' }
 ];
 
@@ -39,15 +39,15 @@ export default function Page() {
 
     useEffect(() => {
         AOS.init({
-          duration: 1200,
+            duration: 1200,
         });
-      }, []);
+    }, []);
 
     const [currentImage, setCurrentImage] = useState(null);
     const [showInfoBox, setShowInfoBox] = useState(false);
     const [infoContent, setInfoContent] = useState('');
 
-    const openInfoBox = (info,image) => {
+    const openInfoBox = (info, image) => {
         setCurrentImage(image);
         setInfoContent(info);
         setShowInfoBox(true);
@@ -76,42 +76,47 @@ export default function Page() {
             <nav data-aos-once="true" data-aos="fade-down" className="absolute top-0 left-0 flex items-center justify-center pt-2 md:pt-4 pb-2 md:pb-4 z-10 w-[100%] bg-white bg-opacity-50">
                 <img src={soapayuda.src} alt="SOAP Ayuda" className="hidden sm:inline-block sm:w-[68px] md:w-[144px] mr-8" />
                 {!!navItems?.length && (
-            <ul className="flex gap-2 sm:gap-4 md:gap-5">
-                {navItems.map((item, index) => (<li key={index}>
-                    <Link href={item.href} className="whitespace-nowrap inline-block text-[#1e5db2] text-sm md:text-lg font-bold no-underline hover:underline duration-300 ease-in-out hover:text-[#22beeb] ">{item.linkText}</Link>
-                </li>
-            ))}</ul>
-            )}</nav>
+                    <ul className="flex gap-2 sm:gap-4 md:gap-5">
+                        {navItems.map((item, index) => (<li key={index}>
+                            <Link href={item.href} className="whitespace-nowrap inline-block text-[#1e5db2] text-sm md:text-lg font-bold no-underline hover:underline duration-300 ease-in-out hover:text-[#22beeb] ">{item.linkText}</Link>
+                        </li>
+                        ))}</ul>
+                )}</nav>
 
             <section className=" h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px] overflow-hidden">
                 <div className="absolute inset-0 overflow-hidden h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px]">
-                    <img src={auto.src}  alt="" className="object-cover w-full h-full"  />
+                    <img src={auto.src} alt="" className="object-cover w-full h-full" />
                 </div>
-                <div className="relative z-10 text-left ml-10 md:ml-20 xl:ml-30 text-white mt-20 md:mt-40 xl:mt-60 duration-300 ease-in-out">
-                    <p data-aos-once="true" data-aos="flip-right" className="uppercase text-center font-extrabold text-md md:text-2xl lg:text-3xl text-[#1e5db2] block w-[200px] md:w-[300px] lg:w-[400px] mb-2 md:mb-4 duration-300 ease-in-out"><span className=" bg-white bg-opacity-50 block p-1 md:p-2 transform -translate-x-5" style={{ clipPath: 'polygon(10% 0, 0 50%, 10% 100%, 100% 100%, 100% 0)' }} >Compra tu Soap</span> <span className=" bg-[#22beeb] block p-1 md:p-2 transform translate-x-5" style={{ clipPath: 'polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0% 100%)' }}>y haz tu donación</span></p>
-                    <h2 data-aos-once="true" data-aos="fade-left" className="uppercase text-center font-extrabold text-md md:text-2xl lg:text-3xl text-[#11468b] border-8 border-[yellow] bg-white bg-opacity-40 block w-[200px] md:w-[300px] lg:w-[400px] p-2 md:p-4 duration-300 ease-in-out" style={{ borderRadius: '50%' }}>Ayuda con tu<br/>seguro<br/>obligatorio</h2>
+                <div className="relative max-w-6xl w-full text-left mx-auto ">
+                    <div className="relative inline-block z-10 text-center px-8 text-white mt-20 md:mt-40 duration-300 ease-in-out">
+                        <p data-aos-once="true" data-aos="flip-right" className=" mx-auto text-center font-extrabold text-md md:text-2xl lg:text-3xl block w-[200px] md:w-[300px] lg:w-[400px] mb-4 md:mb-6 transition-all duration-300 ease-in-out">
+                            <Link style={{ lineHeight: `1.3em` }} href="./#compraaqui" className=" mx-auto transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-8 pt-6 pb-6 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-2xl md:text-3xl no-underline font-medium " >
+                                Compra tu SOAP y haz tu donación</Link>
+                        </p>
+                        <h2 data-aos-once="true" data-aos="fade-left" className=" mx-auto uppercase text-center font-extrabold text-xl md:text-3xl lg:text-4xl text-[#0d50a8] border-8 border-[yellow] bg-white bg-opacity-40 block w-[300px] md:w-[400px] lg:w-[600px] p-2 md:p-4 transition-all duration-300 ease-in-out" style={{ borderRadius: '50%' }}>Ayuda con tu<br />seguro<br />obligatorio</h2>
+                    </div>
                 </div>
             </section>
 
             <section className="text-center max-w-screen-lg mx-auto">
-                <h2 data-aos-once="true" data-aos="fade-up" id="quienesomos" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-10 md:mt-16 mb-10 md:mb-16"><img src={corazon.src} alt=""  className="inline-block mr-2 w-[90px] md:w-[150px]" />¿Quiénes somos?</h2>
+                <h2 data-aos-once="true" data-aos="fade-up" id="quienesomos" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-10 md:mt-16 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />¿Quiénes somos?</h2>
                 <p data-aos-once="true" data-aos="fade-up" className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10"><span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> nace bajo el concepto de ayudar a diversas instituciones y/o fundaciones que mediante la venta del Seguro Obligatorio puedan recibir donaciones con el objetivo de continuar con sus labores sociales.</p>
                 <p data-aos-once="true" data-aos="fade-up" className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10"><span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> proviene de una red de venta que trabaja para prestar el mejor servicio hace más de 20 años con casa matriz en la ciudad de Valparaíso.</p>
                 <p data-aos-once="true" data-aos="fade-up" className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10"><span className="text-[#1e5db2] font-bold">Nuestra VISIÓN es</span> <span className="text-[#22beeb] font-bold">AYUDAR</span> a más instituciónes y/o Fundaciones mediante la venta online del Seguro Obligatorio <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span>.</p>
                 <p data-aos-once="true" data-aos="fade-up" className="text-3xl md:text-5xl font-serif font-bold italic mt-16 mr-20 mb-20 ml-20"><span className="text-[#1e5db2]">Súmate </span><span className="text-[#22beeb]">a esta gran labor</span></p>
-                <h2 data-aos-once="true" data-aos="fade-up" id="ayudasocial" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt=""  className="inline-block mr-2 w-[90px] md:w-[150px]" />Ayuda Social</h2>
+                <h2 data-aos-once="true" data-aos="fade-up" id="ayudasocial" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />Ayuda Social</h2>
                 <p data-aos-once="true" data-aos="fade-up" className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10">Actualmente <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> está presente con convenios en diferentes Instituciones y/o Fundaciones de <span className="text-[#22beeb] font-bold">ámbito social</span>.</p>
             </section>
 
-            <section className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-16 md:mt-28 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-xl mx-auto rounded-none sm:rounded-none md:rounded-none lg:rounded-none xl:rounded-xl ">
+            <section id="compraaqui" className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-16 md:mt-28 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-xl mx-auto rounded-none sm:rounded-none md:rounded-none lg:rounded-none xl:rounded-xl ">
                 {compraaqui.map((item, index) => (<div data-aos-once="true" data-aos="fade-down" key={index} className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 bg-white rounded-lg">
                     <span onClick={() => openInfoBox(item.info, item.image)} className=" cursor-pointer font-serif font-black absolute top-2 right-2 rounded-full h-9 w-9 hover:bg-[#1e5db2] bg-[#22beeb] text-white text-lg flex justify-center items-center hover:shadow-md hover:shadow-[rgba(0,0,0,0.5)] transition-all duration-300 ease-in-out">i</span>
                     <p className=" rounded-lg overflow-hidden">
-                        <img src={item.image.src} alt=""  className="mx-auto" />
+                        <img src={item.image.src} alt="" className="mx-auto" />
                     </p>
-                    <p className="mt-8 nowrap"><img src={mutualdeseguros.src} alt=""  className="inline-block w-8 mr-2" /> <Link href={`/compraaquimut${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
-                    <p className="mt-4 nowrap"><img src={bcibanco.src} alt=""  className="inline-block w-8 mr-2" /> <Link href={`/compraaquibci${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
-                </div> ))}
+                    <p className="mt-8 nowrap"><img src={mutualdeseguros.src} alt="" className="inline-block w-8 mr-2" /> <Link href={`/compraaquimut${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
+                    <p className="mt-4 nowrap"><img src={bcibanco.src} alt="" className="inline-block w-8 mr-2" /> <Link href={`/compraaquibci${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
+                </div>))}
             </section>
 
             {showInfoBox && (
@@ -125,7 +130,7 @@ export default function Page() {
             )}
 
             <section className="text-center max-w-screen-lg mx-auto">
-                <h2 data-aos-once="true" data-aos="fade-up" className="text-3xl md:text-5xl font-bold text-[#22beeb] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt=""  className="inline-block mr-2 w-[90px] md:w-[150px]" />¿Cómo funciona?</h2>
+                <h2 data-aos-once="true" data-aos="fade-up" className="text-3xl md:text-5xl font-bold text-[#22beeb] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />¿Cómo funciona?</h2>
                 <p data-aos-once="true" data-aos="fade-up" className="text-left text-2xl md:text-3xl font-bold text-[#1e5db2] m-7 ">1.- Haga click en el botón de compra de su elección</p>
                 <p data-aos-once="true" data-aos="fade-up" className="text-left text-2xl md:text-3xl font-bold text-[#22beeb] m-7 ">2.- Complete el Formulario</p>
                 <p data-aos-once="true" data-aos="fade-up" className="text-left text-2xl md:text-3xl font-bold text-[#1e5db2] m-7 ">3.- Seleccione forma de pago</p>
@@ -133,12 +138,12 @@ export default function Page() {
             </section>
 
             <section className="text-center max-w-screen-xl mx-auto">
-                <h2 data-aos-once="true" data-aos="fade-up" id="tuaporte" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt=""  className="inline-block mr-2 w-[90px] md:w-[150px]" />Tu aporte SOAP</h2>
+                <h2 data-aos-once="true" data-aos="fade-up" id="tuaporte" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />Tu aporte SOAP</h2>
                 <CarruselImages />
             </section>
 
             <section className="text-center max-w-screen-md mx-auto mb-0 sm:mb-0 md:mb-10 lg:mb-10">
-                <h2 data-aos-once="true" data-aos="fade-up" id="contacto" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt=""  className="inline-block mr-2 w-[90px] md:w-[150px]" />Contacto</h2>
+                <h2 data-aos-once="true" data-aos="fade-up" id="contacto" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />Contacto</h2>
                 {/*<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     <div className="p-4">
                         <div className="flex flex-col justify-center h-full">
@@ -162,39 +167,39 @@ export default function Page() {
                         <p className="mt-2 md:mt-4 font-bold text-socialBlue text-base md:text-lg">(32) 2233491</p>
                         </div>
                     </div>*/}
-                    <div data-aos-once="true" data-aos="fade-down" className="pt-4 pr-4 pb-10 pl-4 bg-[#ddd] rounded-none sm:rounded-none md:rounded-xl lg:rounded-xl">
+                <div data-aos-once="true" data-aos="fade-down" className="pt-4 pr-4 pb-10 pl-4 bg-[#ddd] rounded-none sm:rounded-none md:rounded-xl lg:rounded-xl">
 
-                        <form action="https://api.web3forms.com/submit" method="POST">
-                            <input type="hidden" name="access_key" value="2211d83c-52ec-4484-a609-6fd57c3c47f1" />
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="2211d83c-52ec-4484-a609-6fd57c3c47f1" />
 
-                            <label className=" font-medium text-lg block mt-8" htmlFor="nombre">Nombre</label>
-                            <input className=" rounded-md p-2 font-medium ext-lg w-[100%] mt-2" type="text" name="nombre" required="" />
+                        <label className=" font-medium text-lg block mt-8" htmlFor="nombre">Nombre</label>
+                        <input className=" rounded-md p-2 font-medium ext-lg w-[100%] mt-2" type="text" name="nombre" required="" />
 
-                            <label className=" font-medium text-lg block mt-8" htmlFor="email">Correo electrónico</label>
-                            <input className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" type="email" name="email" required="" />
+                        <label className=" font-medium text-lg block mt-8" htmlFor="email">Correo electrónico</label>
+                        <input className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" type="email" name="email" required="" />
 
-                            <label className=" font-medium text-lg block mt-8" htmlFor="numero">Teléfono</label>
-                            <input className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" type="number" name="numero" required="" />
+                        <label className=" font-medium text-lg block mt-8" htmlFor="numero">Teléfono</label>
+                        <input className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" type="number" name="numero" required="" />
 
-                            <label className=" font-medium text-lg block mt-8" htmlFor="">Mótivo de la consulta</label>
-                            <select className=" rounded-md p-2 font-medium text-base md:text-lg w-[100%] mt-2 appearance-none  bg-[url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNiYmIiPjxwYXRoIGQ9Ik02IDlsNiA2IDYtNiIvPjwvc3ZnPg==)] bg-no-repeat bg-right" name="motivos" id="motivos" required="">
-                                <option value="selecciona">Selecciona un motivo</option>
-                                <option value="opiniones">Opiniones</option>
-                                <option value="agradecimientos">Agradecimientos</option>
-                                <option value="representacion">Representación ONG</option>
-                                <option value="consultas">Consultas</option>
-                            </select>
+                        <label className=" font-medium text-lg block mt-8" htmlFor="">Mótivo de la consulta</label>
+                        <select className=" rounded-md p-2 font-medium text-base md:text-lg w-[100%] mt-2 appearance-none  bg-[url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNiYmIiPjxwYXRoIGQ9Ik02IDlsNiA2IDYtNiIvPjwvc3ZnPg==)] bg-no-repeat bg-right" name="motivos" id="motivos" required="">
+                            <option value="selecciona">Selecciona un motivo</option>
+                            <option value="opiniones">Opiniones</option>
+                            <option value="agradecimientos">Agradecimientos</option>
+                            <option value="representacion">Representación ONG</option>
+                            <option value="consultas">Consultas</option>
+                        </select>
 
-                            <label className=" font-medium text-lg block mt-8" htmlFor="asunto">Asunto</label>
-                            <input className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" type="text" id="asunto" name="Asunto" required="" />
+                        <label className=" font-medium text-lg block mt-8" htmlFor="asunto">Asunto</label>
+                        <input className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" type="text" id="asunto" name="Asunto" required="" />
 
-                            <label className=" font-medium text-lg block mt-8" htmlFor="mensaje">Mensaje</label>
-                            <textarea className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" name="mensaje" id="mensaje" rows="3" required=""></textarea>
+                        <label className=" font-medium text-lg block mt-8" htmlFor="mensaje">Mensaje</label>
+                        <textarea className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" name="mensaje" id="mensaje" rows="3" required=""></textarea>
 
-                            <input className=" rounded-md py-2 px-8 font-bold text-lg mt-8 bg-[#22beeb]" type="submit" value="Enviar" />
-                        </form>
+                        <input className=" rounded-md py-2 px-8 font-bold text-lg mt-8 bg-[#22beeb]" type="submit" value="Enviar" />
+                    </form>
 
-                    </div>
+                </div>
                 {/*</div>*/}
             </section>
 
