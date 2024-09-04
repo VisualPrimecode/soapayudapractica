@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         };
     }, []);
     return (
-        <html lang="en">
+        <html lang="en" className={` scroll-smooth `}>
             <head>
                 <title>{metadata.title.default}</title>
             </head>
