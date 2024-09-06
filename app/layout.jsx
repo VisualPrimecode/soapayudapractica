@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
             <head>
                 <title>{metadata.title.default}</title>
             </head>
-            <body >
+            <body id='tope' className={` pb-0 xl:pb-16 pt-24 sm:pt-16 md:pt-20 lg:pt-24 bg-[linear-gradient(144deg,#eee,#fff,#eee,#fff,#fff)] font-sans `}>
                 {children}
                 <Footer />
             </body>

@@ -14,6 +14,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const navItems = [
+    { linkText: 'Inicio', href: '#tope' },
     { linkText: '¿Quiénes somos?', href: '#quienesomos' },
     { linkText: 'Ayuda Social', href: '#ayudasocial' },
     { linkText: 'Tu aporte SOAP', href: '#tuaporte' },
@@ -47,6 +48,8 @@ export default function Page() {
     const [showInfoBox, setShowInfoBox] = useState(false);
     const [infoContent, setInfoContent] = useState('');
 
+    const [navBarScrollChange, setNavBarScrollChange] = useState(false);
+
     const openInfoBox = (info, image) => {
         setCurrentImage(image);
         setInfoContent(info);
@@ -70,80 +73,114 @@ export default function Page() {
         };
     }, [showInfoBox]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const theHeight = window.innerHeight * 0.62;
+            if (window.scrollY >= theHeight) setNavBarScrollChange(true);
+            else setNavBarScrollChange(false);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
 
         <main className="text-center ">
-            <nav data-aos-once="true" data-aos="fade-down" className="absolute top-0 left-0 flex items-center justify-center pt-2 md:pt-4 pb-2 md:pb-4 z-10 w-[100%] bg-white bg-opacity-50">
-                <img src={soapayuda.src} alt="SOAP Ayuda" className="hidden sm:inline-block sm:w-[68px] md:w-[144px] mr-8" />
-                {!!navItems?.length && (
-                    <ul className="flex gap-2 sm:gap-4 md:gap-5">
-                        {navItems.map((item, index) => (<li key={index}>
-                            <Link href={item.href} className="whitespace-nowrap inline-block text-[#1e5db2] text-sm md:text-lg font-bold no-underline hover:underline duration-300 ease-in-out hover:text-[#22beeb] ">{item.linkText}</Link>
-                        </li>
-                        ))}</ul>
-                )}</nav>
 
-            <section className=" h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px] overflow-hidden">
-                <div className="absolute inset-0 overflow-hidden h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px]">
-                    <img src={auto.src} alt="" className="object-cover w-full h-full" />
-                </div>
-                <div className="relative max-w-6xl w-full text-left mx-auto ">
-                    <div className="relative inline-block z-10 text-center px-8 text-white mt-20 md:mt-40 duration-300 ease-in-out">
-                        <p data-aos-once="true" data-aos="flip-right" className=" mx-auto text-center font-extrabold text-md md:text-2xl lg:text-3xl block w-[200px] md:w-[300px] lg:w-[400px] mb-4 md:mb-6 transition-all duration-300 ease-in-out">
-                            <Link style={{ lineHeight: `1.3em` }} href="./#compraaqui" className=" mx-auto transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-8 pt-6 pb-6 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-2xl md:text-3xl no-underline font-medium " >
-                                Compra tu SOAP y haz tu donación</Link>
+            <nav id={navBarScrollChange ? 'navBarB' : undefined} className={`z-30  fixed top-4 left-1/2 -translate-x-1/2 flex items-start justify-start max-w-screen-lg w-full`} >
+
+                <div className={` inline-flex  gap-6 max-w-screen-lg items-center justify-center shadow-lg shadow-[rgba(0,0,0,0.3)] ${navBarScrollChange ? 'bg-slate-700 opacity-80 hover:opacity-100 ml-4 p-6 flex-col' : 'bg-white bg-opacity-90 opacity-100 mx-auto py-4 px-8 sm:px-4 md:px-6 lg:px-8 flex-row'} rounded-xl transition-all duration-300 ease-in-out`}>
+                    <div className={` inline-block text-center mx-auto ${navBarScrollChange ? 'w-20 md:w-28' : 'w-44 sm:w-16 md:w-28 lg:w-44'}`}>
+                        <img src={soapayuda.src} alt="SOAP Ayuda" className={` h-auto w-auto mx-auto `} />
+                    </div>
+                    {!!navItems?.length && (
+                        <p className={` ${navBarScrollChange ? 'hidden flex-col' : 'hidden sm:inline-flex sm:flex-row'} relative gap-6`}>
+                            {navItems.map((item, index) => (
+                                navBarScrollChange ? (
+                                    <Link key={index} href={item.href} className={` inline-flex text-left justify-start items-center whitespace-nowrap text-sm md:text-base lg:text-lg font-bold no-underline hover:underline transition-all duration-300 ease-in-out ${navBarScrollChange ? 'text-[#22beeb] hover:text-[#a4ebff]' : 'text-[#1e5db2] hover:text-[#22beeb]'} `}>{item.linkText}</Link>
+                                ) :
+                                    (index != 0 && (
+                                        <Link key={index} href={item.href} className={` inline-flex text-left justify-start items-center whitespace-nowrap text-sm md:text-base lg:text-lg font-bold no-underline hover:underline transition-all duration-300 ease-in-out ${navBarScrollChange ? 'text-[#22beeb] hover:text-[#a4ebff]' : 'text-[#1e5db2] hover:text-[#22beeb]'} `}>{item.linkText}</Link>
+                                    ))
+                            ))}
                         </p>
-                        <h2 data-aos-once="true" data-aos="fade-left" className=" mx-auto uppercase text-center font-extrabold text-xl md:text-3xl lg:text-4xl text-[#0d50a8] border-8 border-[yellow] bg-white bg-opacity-40 block w-[300px] md:w-[400px] lg:w-[600px] p-2 md:p-4 transition-all duration-300 ease-in-out" style={{ borderRadius: '50%' }}>Ayuda con tu<br />seguro<br />obligatorio</h2>
+                    )}
+                </div>
+            </nav>
+
+            <section className={`z-10 max-w-screen-xl mx-auto rounded-none xl:rounded-xl  relative h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px] overflow-hidden `}>
+                <div className={` bg-[url('/auto.jpg')] bg-center bg-cover  absolute w-full overflow-hidden h-full `} />
+                <div className={` absolute left-0 bottom-0 h-20 w-full bg-gradient-to-t from-[rgba(0,0,0,0.4)] to-transparent`} />
+                <div className={` absolute left-0 top-0 h-20 w-full bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent`} />
+                <div className="relative max-w-6xl w-full text-left mx-auto ">
+                    <div className="relative inline-block text-center px-8 text-white mt-20 md:mt-40 duration-300 ease-in-out">
+                        <h2 data-aos-once="true" data-aos="flip-right">
+                            <Link style={{ lineHeight: `1.3em` }} href="./#compraaqui" className=" mx-auto mb-4 md:mb-6 w-52 md:w-72 lg:w-96 transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-8 pt-6 pb-6 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-2xl md:text-3xl no-underline font-bold " >
+                                Compra tu SOAP y haz tu donación</Link>
+                        </h2>
+                        <h2 data-aos-once="true" data-aos="flip-right" className=" mx-auto uppercase text-center font-extrabold text-xl md:text-3xl lg:text-4xl text-[#0d50a8] border-8 border-[yellow] bg-white bg-opacity-40 block w-72 md:w-96 lg:w-[36rem] p-2 md:p-4 transition-all duration-300 ease-in-out" style={{ borderRadius: '50%' }}>
+                            Ayuda con tu<br />seguro<br />obligatorio</h2>
                     </div>
                 </div>
             </section>
 
             <section className="text-center max-w-screen-lg mx-auto">
-                <h2 data-aos-once="true" data-aos="fade-up" id="quienesomos" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-10 md:mt-16 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />¿Quiénes somos?</h2>
-                <p data-aos-once="true" data-aos="fade-up" className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10"><span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> nace bajo el concepto de ayudar a diversas instituciones y/o fundaciones que mediante la venta del Seguro Obligatorio puedan recibir donaciones con el objetivo de continuar con sus labores sociales.</p>
-                <p data-aos-once="true" data-aos="fade-up" className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10"><span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> proviene de una red de venta que trabaja para prestar el mejor servicio hace más de 20 años con casa matriz en la ciudad de Valparaíso.</p>
-                <p data-aos-once="true" data-aos="fade-up" className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10"><span className="text-[#1e5db2] font-bold">Nuestra VISIÓN es</span> <span className="text-[#22beeb] font-bold">AYUDAR</span> a más instituciónes y/o Fundaciones mediante la venta online del Seguro Obligatorio <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span>.</p>
-                <p data-aos-once="true" data-aos="fade-up" className="text-3xl md:text-5xl font-serif font-bold italic mt-16 mr-20 mb-20 ml-20"><span className="text-[#1e5db2]">Súmate </span><span className="text-[#22beeb]">a esta gran labor</span></p>
-                <h2 data-aos-once="true" data-aos="fade-up" id="ayudasocial" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />Ayuda Social</h2>
-                <p data-aos-once="true" data-aos="fade-up" className="text-1xl md:text-2xl font-medium text-black m-7 leading-6 md:leading-10">Actualmente <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> está presente con convenios en diferentes Instituciones y/o Fundaciones de <span className="text-[#22beeb] font-bold">ámbito social</span>.</p>
+                <h2 id="quienesomos" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-20 md:mt-28 mb-10 md:mb-16">¿Quiénes somos?</h2>
+                <div className={` text-justify tracking-normal indent-6 hyphens-auto text-xl md:text-2xl font-medium text-opacity-60 text-black leading-8 md:leading-9 font-sans`}>
+                    <p className={`mx-6 mb-7 `} ><span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> nace bajo el concepto de ayudar a diversas instituciones y/o fundaciones que mediante la venta del Seguro Obligatorio puedan recibir donaciones con el objetivo de continuar con sus labores sociales.</p>
+                    <p data-aos-once="true" data-aos="fade-up" className={`mx-6 mb-7 `} ><span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> proviene de una red de venta que trabaja para prestar el mejor servicio hace más de 20 años con casa matriz en la ciudad de Valparaíso.</p>
+                    <p data-aos-once="true" data-aos="fade-up" className={`mx-6 mb-7 `} ><span className="text-[#1e5db2] font-bold">Nuestra VISIÓN es</span> <span className="text-[#22beeb] font-bold">AYUDAR</span> a más instituciónes y/o Fundaciones mediante la venta online del Seguro Obligatorio <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span>.</p>
+                </div>
+                <p data-aos-once="true" data-aos="fade-up" className="text-3xl md:text-5xl font-serif font-bold italic mt-16 mr-20 ml-20"><span className="text-[#1e5db2]">Súmate </span><span className="text-[#22beeb]">a esta gran labor</span></p>
+                <p data-aos-once="true" data-aos="fade-up" className="mt-14 md:mt-30 mb-8 sm:mb-10 md:mb-16 "><img src={corazon.src} alt="" className="inline-block mr-2 w-40 sm:w-40 md:w-48 lg:w-52" /></p>
+                <h2 data-aos-once="true" data-aos="fade-up" id="ayudasocial" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-20 mb-10 md:mb-16">Ayuda Social</h2>
+                <p data-aos-once="true" data-aos="fade-up" className=" text-justify indent-6 hyphens-auto text-xl md:text-2xl font-medium text-opacity-60 text-black mx-7 mt-7 leading-8 md:leading-9">Actualmente, <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> está presente con convenios en diferentes Instituciones y/o Fundaciones de <span className="text-[#22beeb] font-bold">ámbito social</span>.</p>
             </section>
 
-            <section id="compraaqui" className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-16 md:mt-28 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-[#22beeb] p-8 max-w-screen-xl mx-auto rounded-none sm:rounded-none md:rounded-none lg:rounded-none xl:rounded-xl ">
-                {compraaqui.map((item, index) => (<div data-aos-once="true" data-aos="fade-down" key={index} className="px-20 py-10 sm:p-10 md:p-10 lg:p-4 bg-white rounded-lg">
-                    <span onClick={() => openInfoBox(item.info, item.image)} className=" cursor-pointer font-serif font-black absolute top-2 right-2 rounded-full h-9 w-9 hover:bg-[#1e5db2] bg-[#22beeb] text-white text-lg flex justify-center items-center hover:shadow-md hover:shadow-[rgba(0,0,0,0.5)] transition-all duration-300 ease-in-out">i</span>
-                    <p className=" rounded-lg overflow-hidden">
+            <section id="compraaqui" className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-8 md:mt-12 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-[#22beeb] border-solid border-2 border-slate-900 border-opacity-10 px-8 lg:px-4 py-10 max-w-screen-xl mx-auto rounded-none sm:rounded-none md:rounded-none lg:rounded-none xl:rounded-xl ">
+                <div className={` absolute left-0 bottom-0 h-14 w-full bg-gradient-to-t from-[rgba(0,0,0,0.2)] to-transparent`} />
+                <div className={` absolute left-0 top-0 h-14 w-full bg-gradient-to-b from-[rgba(0,0,0,0.2)] to-transparent`} />
+                {compraaqui.map((item, index) => (<div data-aos-once="true" data-aos="fade-down" key={index} className=" p-4 bg-white border-solid border-2 border-slate-900 border-opacity-10 rounded-lg">
+                    <p className="relative rounded-lg overflow-hidden">
+                        <span onClick={() => openInfoBox(item.info, item.image)} className=" cursor-pointer font-serif font-black absolute bottom-1/4 right-2 rounded-full h-9 w-9 hover:bg-[#1e5db2] bg-[#22beeb] border-2 border-solid border-[#22beeb] hover:border-none text-white text-lg flex justify-center items-center shadow-md shadow-[rgba(0,0,0,0.6)] hover:shadow-md hover:shadow-[rgba(0,0,0,0.3)] transition-all duration-300 ease-in-out">i</span>
                         <img src={item.image.src} alt="" className="mx-auto" />
                     </p>
-                    <p className="mt-8 nowrap"><img src={mutualdeseguros.src} alt="" className="inline-block w-8 mr-2" /> <Link href={`/compraaquimut${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
-                    <p className="mt-4 nowrap"><img src={bcibanco.src} alt="" className="inline-block w-8 mr-2" /> <Link href={`/compraaquibci${item.fundacion}`} className="inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
+                    <p className="mt-8 nowrap"><img src={mutualdeseguros.src} alt="" className="inline-block w-8 mr-2" /> <Link href={`/compraaquimut${item.fundacion}`} className=" transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
+                    <p className="mt-4 nowrap"><img src={bcibanco.src} alt="" className="inline-block w-8 mr-2" /> <Link href={`/compraaquibci${item.fundacion}`} className=" transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
                 </div>))}
             </section>
 
             {showInfoBox && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50 ">
-                    <div data-aos-once="true" data-aos="fade" id="infoblock" className="bg-white p-16 rounded-xl text-center shadow-2xl z-50 ">
-                        <p className="text-center"><img src={currentImage.src} alt="" className="mx-auto w-[89px] sm:w-[144px]" /></p>
-                        <p className="md:text-2xl text-md text-black font-medium text-center">{infoContent}</p>
-                        <p className="mt-12 uppercase text-base md:text-md text-[#22beeb] hover:text-[#1e5db2] font-bold text-center cursor-pointer transition-all ease-in-out duration-300" onClick={closeInfoBox}>Cerrar</p>
+                <div className=" fixed inset-0 bg-black bg-opacity-40 z-50 ">
+                    <div className={` relative max-w-2xl h-full mx-auto px-8 flex items-center justify-center `} data-aos-once="true" data-aos="fade">
+                        <div id="infoblock" className=" overflow-auto block bg-white p-6 sm:p-8 md:p-16 rounded-xl shadow-lg shadow-[rgba(0,0,0,0.4)] z-50 ">
+                            <p className="text-center"><img src={currentImage.src} alt="" className="mx-auto w-[144px]" /></p>
+                            <p className="mt-8 md:text-xl sm:text-lg text-base text-black font-medium text-justify hyphens-auto text-opacity-60 indent-5 leading-7 sm:leading-8 md:leading-9 ">{infoContent}</p>
+                            <p className="mt-12 uppercase text-base md:text-md text-[#22beeb] hover:text-[#1e5db2] font-bold text-center cursor-pointer transition-all ease-in-out duration-300" onClick={closeInfoBox}>Cerrar</p>
+                        </div>
                     </div>
                 </div>
             )}
 
-            <section className="text-center max-w-screen-lg mx-auto">
-                <h2 data-aos-once="true" data-aos="fade-up" className="text-3xl md:text-5xl font-bold text-[#22beeb] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />¿Cómo funciona?</h2>
-                <p data-aos-once="true" data-aos="fade-up" className="text-left text-2xl md:text-3xl font-bold text-[#1e5db2] m-7 ">1.- Haga click en el botón de compra de su elección</p>
-                <p data-aos-once="true" data-aos="fade-up" className="text-left text-2xl md:text-3xl font-bold text-[#22beeb] m-7 ">2.- Complete el Formulario</p>
-                <p data-aos-once="true" data-aos="fade-up" className="text-left text-2xl md:text-3xl font-bold text-[#1e5db2] m-7 ">3.- Seleccione forma de pago</p>
-                <p data-aos-once="true" data-aos="fade-up" className="text-left text-2xl md:text-3xl font-bold text-[#22beeb] m-7 ">4.- Hecho el pago ya has donado a la institución elegida</p>
+            <section className="text-center max-w-screen-md w-full mx-auto">
+                <h2 data-aos-once="true" data-aos="fade-up" className="text-3xl md:text-5xl font-bold text-[#22beeb] mt-16 md:mt-28 mb-10 md:mb-16">¿Cómo funciona?</h2>
+                <ol className={` list-decimal list-outside text-left text-2xl md:text-3xl font-semibold ml-8 `}>
+                    <li data-aos-once="true" data-aos="fade-up" className={` text-[#1754a3] m-7 `}>Haga click en el botón de compra de su elección</li>
+                    <li data-aos-once="true" data-aos="fade-up" className={` text-[#11b8e7] m-7 `} >Complete el Formulario</li>
+                    <li data-aos-once="true" data-aos="fade-up" className={` text-[#1754a3] m-7 `} >Seleccione forma de pago</li>
+                    <li data-aos-once="true" data-aos="fade-up" className={` text-[#11b8e7] m-7 `} >Hecho el pago ya has donado a la institución elegida</li>
+                </ol>
             </section>
 
-            <section className="text-center max-w-screen-xl mx-auto">
-                <h2 data-aos-once="true" data-aos="fade-up" id="tuaporte" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />Tu aporte SOAP</h2>
+            <section className="text-center max-w-screen-xl mx-auto relative">
+                <p data-aos-once="true" data-aos="fade-up" className="mt-14 md:mt-30 mb-8 sm:mb-10 md:mb-16 "><img src={corazon.src} alt="" className="inline-block mr-2 w-40 sm:w-40 md:w-48 lg:w-52" /></p>
+                <h2 data-aos-once="true" data-aos="fade-up" id="tuaporte" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16">Tu aporte SOAP</h2>
                 <CarruselImages />
             </section>
 
-            <section className="text-center max-w-screen-md mx-auto mb-0 sm:mb-0 md:mb-10 lg:mb-10">
-                <h2 data-aos-once="true" data-aos="fade-up" id="contacto" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16"><img src={corazon.src} alt="" className="inline-block mr-2 w-[90px] md:w-[150px]" />Contacto</h2>
+            <section className="text-center max-w-screen-md mx-auto mb-0 sm:mb-0 md:mb-40">
+                <h2 data-aos-once="true" data-aos="fade-up" id="contacto" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-28 mb-10 md:mb-16">Contacto</h2>
                 {/*<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     <div className="p-4">
                         <div className="flex flex-col justify-center h-full">
@@ -167,9 +204,11 @@ export default function Page() {
                         <p className="mt-2 md:mt-4 font-bold text-socialBlue text-base md:text-lg">(32) 2233491</p>
                         </div>
                     </div>*/}
-                <div data-aos-once="true" data-aos="fade-down" className="pt-4 pr-4 pb-10 pl-4 bg-[#ddd] rounded-none sm:rounded-none md:rounded-xl lg:rounded-xl">
+                <div data-aos-once="true" data-aos="fade-down" className="pt-4 pr-4 pb-10 pl-4 bg-[#22beeb] border-solid border-2 border-slate-900 border-opacity-10 rounded-none sm:rounded-none md:rounded-xl lg:rounded-xl relative">
+                    <div className={` absolute left-0 bottom-0 h-24 w-full bg-gradient-to-t from-[rgba(0,0,0,0.1)] to-transparent`} />
+                    <div className={` absolute left-0 top-0 h-24 w-full bg-gradient-to-b from-[rgba(0,0,0,0.1)] to-transparent`} />
 
-                    <form action="https://api.web3forms.com/submit" method="POST">
+                    <form className={` relative `} action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="2211d83c-52ec-4484-a609-6fd57c3c47f1" />
 
                         <label className=" font-medium text-lg block mt-8" htmlFor="nombre">Nombre</label>
@@ -196,7 +235,7 @@ export default function Page() {
                         <label className=" font-medium text-lg block mt-8" htmlFor="mensaje">Mensaje</label>
                         <textarea className=" rounded-md p-2 font-medium text-lg w-[100%] mt-2" name="mensaje" id="mensaje" rows="3" required=""></textarea>
 
-                        <input className=" rounded-md py-2 px-8 font-bold text-lg mt-8 bg-[#22beeb]" type="submit" value="Enviar" />
+                        <input className=" rounded-md py-2 px-8 font-bold text-lg mt-8 bg-[#1e5db2] text-white text-opacity-70 hover:text-opacity-100 cursor-pointer hover:shadow-lg hover:shadow-[rgba(0,0,0,0.5)] transition-all easy-in-out duration-300" type="submit" value="Enviar" />
                     </form>
 
                 </div>

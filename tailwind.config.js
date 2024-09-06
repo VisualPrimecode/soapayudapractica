@@ -18,7 +18,8 @@ module.exports = {
                 footerGrey: '#909191'
             },
             fontFamily: {
-                sans: ['Inter', 'Helvetica Neue', 'Arial', ...defaultTheme.fontFamily.sans],
+                openSans: ['Open Sans', 'Helvetica Neue', 'Arial', ...defaultTheme.fontFamily.sans],
+                sans: ['Raleway', 'Helvetica Neue', 'Arial', ...defaultTheme.fontFamily.sans],
                 serif: ['Noto Serif', 'Georgia', 'serif', ...defaultTheme.fontFamily.serif],
             },
             boxShadow: {

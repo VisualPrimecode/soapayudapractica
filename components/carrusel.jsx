@@ -52,7 +52,7 @@ export function CarruselImages() {
   }, []);
 
   return (
-    <div className="bg-[url('/image-gallery-1.jpg')] bg-cover bg-center bg-no-repeat mx-auto h-[377px] md:h-[610px] overflow-hidden relative rounded-none sm:rounded-none md:rounded-none lg:rounded-none xl:rounded-xl">
+    <div className="bg-[url('/image-gallery-1.jpg')] bg-cover bg-center bg-no-repeat mx-auto h-[377px] md:h-[610px] overflow-hidden relative rounded-none sm:rounded-none md:rounded-none lg:rounded-none xl:rounded-xl ">
       {carrusel.map((item, index) => (
         <img
           key={index}
@@ -64,6 +64,8 @@ export function CarruselImages() {
           height={item.height} // Provide the actual height of the image
         />
       ))}
+      <div className={` absolute left-0 bottom-0 h-20 w-full bg-gradient-to-t from-[rgba(0,0,0,0.6)] to-transparent`} />
+      <div className={` absolute left-0 top-0 h-20 w-full bg-gradient-to-b from-[rgba(0,0,0,0.6)] to-transparent`} />
     </div>
   );
 }
