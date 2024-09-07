@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import corazon from 'public/corazon.png';
 import auto from 'public/auto.jpg';
+import corazon from 'public/corazon.png';
 import soapayuda from 'public/soapayuda .png';
 
 import CarruselImages from 'components/carrusel';
@@ -53,24 +53,16 @@ export default function Page() {
     const openInfoBox = (info, image) => {
         setCurrentImage(image);
         setInfoContent(info);
-        setShowInfoBox(true);
-    };
+        setShowInfoBox(true); };
 
     const closeInfoBox = () => {
         setShowInfoBox(false);
-        setCurrentImage(null);
-    };
+        setCurrentImage(null); };
 
     useEffect(() => {
-        if (showInfoBox) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'scroll';
-        }
-        // Cleanup function to reset the overflow when the component unmounts
-        return () => {
-            document.body.style.overflow = 'scroll';
-        };
+        if (showInfoBox) document.body.style.overflow = 'hidden';
+        else document.body.style.overflow = 'scroll';
+        return () => document.body.style.overflow = 'scroll'; 
     }, [showInfoBox]);
 
     useEffect(() => {
@@ -79,7 +71,6 @@ export default function Page() {
             if (window.scrollY >= theHeight) setNavBarScrollChange(true);
             else setNavBarScrollChange(false);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -87,7 +78,7 @@ export default function Page() {
     return (
 
         <main className="text-center ">
-
+{/*
             <nav id={navBarScrollChange ? 'navBarB' : undefined} className={`z-30  fixed top-4 left-1/2 -translate-x-1/2 flex items-start justify-start max-w-screen-lg w-full`} >
 
                 <div className={` inline-flex  gap-6 max-w-screen-lg items-center justify-center shadow-lg shadow-[rgba(0,0,0,0.3)] ${navBarScrollChange ? 'bg-slate-700 opacity-80 hover:opacity-100 ml-4 p-6 flex-col' : 'bg-white bg-opacity-90 opacity-100 mx-auto py-4 px-8 sm:px-4 md:px-6 lg:px-8 flex-row'} rounded-xl transition-all duration-300 ease-in-out`}>
@@ -108,7 +99,7 @@ export default function Page() {
                     )}
                 </div>
             </nav>
-
+*/}
             <section className={`z-10 max-w-screen-xl mx-auto rounded-none xl:rounded-xl  relative h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px] overflow-hidden `}>
                 <div className={` bg-[url('/auto.jpg')] bg-center bg-cover  absolute w-full overflow-hidden h-full `} />
                 <div className={` absolute left-0 bottom-0 h-20 w-full bg-gradient-to-t from-[rgba(0,0,0,0.4)] to-transparent`} />
@@ -119,8 +110,11 @@ export default function Page() {
                             <Link style={{ lineHeight: `1.3em` }} href="./#compraaqui" className=" mx-auto mb-4 md:mb-6 w-52 md:w-72 lg:w-96 transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-8 pt-6 pb-6 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-2xl md:text-3xl no-underline font-bold " >
                                 Compra tu SOAP y haz tu donación</Link>
                         </h2>
-                        <h2 data-aos-once="true" data-aos="flip-right" className=" mx-auto uppercase text-center font-extrabold text-xl md:text-3xl lg:text-4xl text-[#0d50a8] border-8 border-[yellow] bg-white bg-opacity-40 block w-72 md:w-96 lg:w-[36rem] p-2 md:p-4 transition-all duration-300 ease-in-out" style={{ borderRadius: '50%' }}>
-                            Ayuda con tu<br />seguro<br />obligatorio</h2>
+                        <div data-aos-once="true" data-aos="flip-right" className={` border-8 border-solid border-[yellow] mx-auto uppercase text-center font-extrabold text-xl md:text-3xl lg:text-4xl text-[#0d50a8] block w-72 md:w-96 lg:w-[36rem] transition-all duration-300 ease-in-out `} style={{ borderRadius: `50%` }}>
+                        <h2 className={` border-0 md:border-8 border-solid border-[yellow] block p-4 md:p-6 bg-white bg-opacity-60 `} style={{ borderRadius: `50%` }}>
+                            Ayuda con tu<br />seguro obligatorio
+                            </h2>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -132,15 +126,15 @@ export default function Page() {
                     <p data-aos-once="true" data-aos="fade-up" className={`mx-6 mb-7 `} ><span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> proviene de una red de venta que trabaja para prestar el mejor servicio hace más de 20 años con casa matriz en la ciudad de Valparaíso.</p>
                     <p data-aos-once="true" data-aos="fade-up" className={`mx-6 mb-7 `} ><span className="text-[#1e5db2] font-bold">Nuestra VISIÓN es</span> <span className="text-[#22beeb] font-bold">AYUDAR</span> a más instituciónes y/o Fundaciones mediante la venta online del Seguro Obligatorio <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span>.</p>
                 </div>
-                <p data-aos-once="true" data-aos="fade-up" className="text-3xl md:text-5xl font-serif font-bold italic mt-16 mr-20 ml-20"><span className="text-[#1e5db2]">Súmate </span><span className="text-[#22beeb]">a esta gran labor</span></p>
+                <p data-aos-once="true" data-aos="fade-up" className="tracking-tight text-3xl md:text-5xl font-serif font-extrabold italic mt-16 mr-20 ml-20"><span className="text-[#1e5db2]">Súmate </span><span className="text-[#22beeb]">a esta gran labor</span></p>
                 <p data-aos-once="true" data-aos="fade-up" className="mt-14 md:mt-30 mb-8 sm:mb-10 md:mb-16 "><img src={corazon.src} alt="" className="inline-block mr-2 w-40 sm:w-40 md:w-48 lg:w-52" /></p>
                 <h2 data-aos-once="true" data-aos="fade-up" id="ayudasocial" className="scroll-m-header text-3xl md:text-5xl font-bold text-[#1e5db2] mt-16 md:mt-20 mb-10 md:mb-16">Ayuda Social</h2>
                 <p data-aos-once="true" data-aos="fade-up" className=" text-justify indent-6 hyphens-auto text-xl md:text-2xl font-medium text-opacity-60 text-black mx-7 mt-7 leading-8 md:leading-9">Actualmente, <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> está presente con convenios en diferentes Instituciones y/o Fundaciones de <span className="text-[#22beeb] font-bold">ámbito social</span>.</p>
             </section>
 
-            <section id="compraaqui" className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-8 md:mt-12 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-[#22beeb] border-solid border-2 border-slate-900 border-opacity-10 px-8 lg:px-4 py-10 max-w-screen-xl mx-auto rounded-none sm:rounded-none md:rounded-none lg:rounded-none xl:rounded-xl ">
-                <div className={` absolute left-0 bottom-0 h-14 w-full bg-gradient-to-t from-[rgba(0,0,0,0.2)] to-transparent`} />
-                <div className={` absolute left-0 top-0 h-14 w-full bg-gradient-to-b from-[rgba(0,0,0,0.2)] to-transparent`} />
+            <section id="compraaqui" className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-8 md:mt-12 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-[#22beeb]  px-8 lg:px-4 py-10 max-w-screen-xl mx-auto rounded-none  xl:rounded-xl overflow-hidden">
+                <div className={` absolute left-0 bottom-0 h-24 w-full bg-gradient-to-t from-[rgba(255,255,255,0.3)] to-transparent`} />
+                <div className={` absolute left-0 top-0 h-24 w-full bg-gradient-to-b from-[rgba(30,93,178,0.8)] to-transparent`} />
                 {compraaqui.map((item, index) => (<div data-aos-once="true" data-aos="fade-down" key={index} className=" p-4 bg-white border-solid border-2 border-slate-900 border-opacity-10 rounded-lg">
                     <p className="relative rounded-lg overflow-hidden">
                         <span onClick={() => openInfoBox(item.info, item.image)} className=" cursor-pointer font-serif font-black absolute bottom-1/4 right-2 rounded-full h-9 w-9 hover:bg-[#1e5db2] bg-[#22beeb] border-2 border-solid border-[#22beeb] hover:border-none text-white text-lg flex justify-center items-center shadow-md shadow-[rgba(0,0,0,0.6)] hover:shadow-md hover:shadow-[rgba(0,0,0,0.3)] transition-all duration-300 ease-in-out">i</span>
@@ -204,9 +198,9 @@ export default function Page() {
                         <p className="mt-2 md:mt-4 font-bold text-socialBlue text-base md:text-lg">(32) 2233491</p>
                         </div>
                     </div>*/}
-                <div data-aos-once="true" data-aos="fade-down" className="pt-4 pr-4 pb-10 pl-4 bg-[#22beeb] border-solid border-2 border-slate-900 border-opacity-10 rounded-none sm:rounded-none md:rounded-xl lg:rounded-xl relative">
-                    <div className={` absolute left-0 bottom-0 h-24 w-full bg-gradient-to-t from-[rgba(0,0,0,0.1)] to-transparent`} />
-                    <div className={` absolute left-0 top-0 h-24 w-full bg-gradient-to-b from-[rgba(0,0,0,0.1)] to-transparent`} />
+                <div data-aos-once="true" data-aos="fade-down" className="pt-4 pr-4 pb-10 pl-4 bg-[#22beeb] rounded-none sm:rounded-none md:rounded-xl lg:rounded-xl relative overflow-hidden">
+                    <div className={` absolute left-0 bottom-0 h-32 w-full bg-gradient-to-t from-[rgba(255,255,255,0.3)] to-transparent`} />
+                    <div className={` absolute left-0 top-0 h-32 w-full bg-gradient-to-b from-[rgba(30,93,178,0.8)] to-transparent`} />
 
                     <form className={` relative `} action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="2211d83c-52ec-4484-a609-6fd57c3c47f1" />
@@ -239,7 +233,7 @@ export default function Page() {
                     </form>
 
                 </div>
-                {/*</div>*/}
+
             </section>
 
 
