@@ -4,7 +4,7 @@ import Boton from 'components/button';
 import bcibanco from '/public/bcibanco.png';
 
 export const metadata = {
-    title: 'BCI | Cruz Roja | Soap Ayuda'
+    title: 'BCI | Cruz Roja'
 };
 
 export default async function Page() {

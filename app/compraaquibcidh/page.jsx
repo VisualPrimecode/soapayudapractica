@@ -3,7 +3,7 @@ import Boton from 'components/button';
 import bcibanco from '/public/bcibanco.png';
 
 export const metadata = {
-    title: 'BCI | DHERMES | Soap Ayuda'
+    title: 'BCI | DHERMES'
 };
 
 export default async function Page() {

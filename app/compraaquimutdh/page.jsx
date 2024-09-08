@@ -4,7 +4,7 @@ import Boton from 'components/button';
 import mutualdeseguros from '/public/mutualdeseguros.png';
 
 export const metadata = {
-    title: 'Mutal de Seguros | DHERMES | Soap Ayuda'
+    title: 'Mutal de Seguros | DHERMES'
 };
 
 export default async function Page() {

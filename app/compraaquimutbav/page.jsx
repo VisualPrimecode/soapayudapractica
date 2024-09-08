@@ -4,7 +4,7 @@ import Boton from 'components/button';
 import mutualdeseguros from '/public/mutualdeseguros.png';
 
 export const metadata = {
-    title: 'Mutal de Seguros | Bomberos Americana Valparaiso | Soap Ayuda'
+    title: 'Mutal de Seguros | Bomberos Americana Valparaiso'
 };
 
 export default async function Page() {

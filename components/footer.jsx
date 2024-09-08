@@ -4,10 +4,8 @@ import soapayuda from 'public/soapayuda .png';
 
 export function Footer() {
     return (
-        <footer className=" bg-sky-950 mx-auto max-w-screen-lg rounded-none lg:rounded-xl overflow-hidden">
+        <footer className=" bg-[linear-gradient(180deg,#254983,#1A385D,#0E2032)] mx-auto max-w-screen-lg rounded-none lg:rounded-xl overflow-hidden">
             <div className={` relative py-6 w-full flex flex-col md:flex-row md:justify-evenly items-center gap-6 md:gap-0 text-lg text-white text-opacity-80 text-center `}>
-                    <div className={` absolute left-0 bottom-0 h-1/5 w-full bg-gradient-to-t from-[rgba(0,0,0,0.3)] to-transparent`} />
-                    <div className={` absolute left-0 top-0 h-4/5 w-full bg-gradient-to-b from-[rgba(30,93,178,0.6)] to-transparent`} />
 
                 <section className="relative px-3">
                     <h3 className="w-full h-16 relative ">

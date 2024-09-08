@@ -6,7 +6,7 @@ import Boton from 'components/button';
 import bcibanco from '/public/bcibanco.png';
 
 export const metadata = {
-    title: 'BCI | Bomberos Americana Valparaiso | Soap Ayuda'
+    title: 'BCI | Bomberos Americana Valparaiso'
 };
 
 export default async function Page() {

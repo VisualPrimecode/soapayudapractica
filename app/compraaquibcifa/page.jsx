@@ -4,7 +4,7 @@ import Boton from 'components/button';
 import bcibanco from '/public/bcibanco.png';
 
 export const metadata = {
-    title: 'BCI | Fundación Apoyándote | Soap Ayuda'
+    title: 'BCI | Fundación Apoyándote'
 };
 
 export default async function Page() {
