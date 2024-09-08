@@ -78,45 +78,27 @@ export default function Page() {
     return (
 
         <main className="text-center ">
-{/*
-            <nav id={navBarScrollChange ? 'navBarB' : undefined} className={`z-30  fixed top-4 left-1/2 -translate-x-1/2 flex items-start justify-start max-w-screen-lg w-full`} >
 
-                <div className={` inline-flex  gap-6 max-w-screen-lg items-center justify-center shadow-lg shadow-[rgba(0,0,0,0.3)] ${navBarScrollChange ? 'bg-slate-700 opacity-80 hover:opacity-100 ml-4 p-6 flex-col' : 'bg-white bg-opacity-90 opacity-100 mx-auto py-4 px-8 sm:px-4 md:px-6 lg:px-8 flex-row'} rounded-xl transition-all duration-300 ease-in-out`}>
-                    <div className={` inline-block text-center mx-auto ${navBarScrollChange ? 'w-20 md:w-28' : 'w-44 sm:w-16 md:w-28 lg:w-44'}`}>
-                        <img src={soapayuda.src} alt="SOAP Ayuda" className={` h-auto w-auto mx-auto `} />
-                    </div>
-                    {!!navItems?.length && (
-                        <p className={` ${navBarScrollChange ? 'hidden flex-col' : 'hidden sm:inline-flex sm:flex-row'} relative gap-6`}>
-                            {navItems.map((item, index) => (
-                                navBarScrollChange ? (
-                                    <Link key={index} href={item.href} className={` inline-flex text-left justify-start items-center whitespace-nowrap text-sm md:text-base lg:text-lg font-bold no-underline hover:underline transition-all duration-300 ease-in-out ${navBarScrollChange ? 'text-[#22beeb] hover:text-[#a4ebff]' : 'text-[#1e5db2] hover:text-[#22beeb]'} `}>{item.linkText}</Link>
-                                ) :
-                                    (index != 0 && (
-                                        <Link key={index} href={item.href} className={` inline-flex text-left justify-start items-center whitespace-nowrap text-sm md:text-base lg:text-lg font-bold no-underline hover:underline transition-all duration-300 ease-in-out ${navBarScrollChange ? 'text-[#22beeb] hover:text-[#a4ebff]' : 'text-[#1e5db2] hover:text-[#22beeb]'} `}>{item.linkText}</Link>
-                                    ))
-                            ))}
-                        </p>
-                    )}
-                </div>
-            </nav>
-*/}
-            <section className={`z-10 max-w-screen-xl mx-auto rounded-none xl:rounded-xl  relative h-[453px] sm:h-[529px] md:h-[610px] lg:h-[610px] overflow-hidden `}>
+            <section className={`z-10 max-w-screen-xl mx-auto rounded-none xl:rounded-xl  relative h-[453px] sm:h-[453px] md:h-[610px] lg:h-[610px] overflow-hidden `}>
+
                 <div className={` bg-[url('/auto.jpg')] bg-center bg-cover  absolute w-full overflow-hidden h-full `} />
                 <div className={` absolute left-0 bottom-0 h-20 w-full bg-gradient-to-t from-[rgba(0,0,0,0.4)] to-transparent`} />
                 <div className={` absolute left-0 top-0 h-20 w-full bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent`} />
-                <div className="relative max-w-6xl w-full text-left mx-auto ">
-                    <div className="relative inline-block text-center px-8 text-white mt-20 md:mt-40 duration-300 ease-in-out">
+
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 max-w-6xl w-full h-full flex flex-col items-start justify-center text-left mx-auto ">
+                    <div className="relative block text-center px-8 text-white transition-all duration-300 ease-in-out max-w-xl">
                         <h2 data-aos-once="true" data-aos="flip-right">
                             <Link style={{ lineHeight: `1.3em` }} href="./#compraaqui" className=" mx-auto mb-4 md:mb-6 w-52 md:w-72 lg:w-96 transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-8 pt-6 pb-6 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-2xl md:text-3xl no-underline font-bold " >
                                 Compra tu SOAP y haz tu donación</Link>
                         </h2>
-                        <div data-aos-once="true" data-aos="flip-right" className={` border-8 border-solid border-[yellow] mx-auto uppercase text-center font-extrabold text-xl md:text-3xl lg:text-4xl text-[#0d50a8] block w-72 md:w-96 lg:w-[36rem] transition-all duration-300 ease-in-out `} style={{ borderRadius: `50%` }}>
-                        <h2 className={` border-0 md:border-8 border-solid border-[yellow] block p-4 md:p-6 bg-white bg-opacity-60 `} style={{ borderRadius: `50%` }}>
-                            Ayuda con tu<br />seguro obligatorio
+                        <div data-aos-once="true" data-aos="flip-right" className={`w-full border-8 border-solid border-[yellow] mx-auto uppercase block transition-all duration-300 ease-in-out `} style={{ borderRadius: `50%` }}>
+                            <h2 className={` border-2 sm:border-4 md:border-8 border-solid border-[yellow] block px-8 py-5 md:px-10 md:py-8 bg-white bg-opacity-60 text-center font-extrabold text-xl md:text-3xl lg:text-4xl text-[#0d50a8] `} style={{ borderRadius: `50%` }}>
+                                Ayuda con tu<br />seguro obligatorio
                             </h2>
                         </div>
                     </div>
                 </div>
+
             </section>
 
             <section className="text-center max-w-screen-lg mx-auto">
