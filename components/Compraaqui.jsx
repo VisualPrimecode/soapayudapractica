@@ -40,18 +40,15 @@ const Compraaqui = () => {
 
     return (
         <>
-    <section id="compraaqui" className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-8 md:mt-12 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-[#22beeb]  px-8 lg:px-4 py-10 max-w-screen-xl mx-auto rounded-none  xl:rounded-xl overflow-hidden">
-        <div className={` absolute left-0 bottom-0 h-24 w-full bg-gradient-to-t from-[rgba(255,255,255,0.3)] to-transparent`} />
-        <div className={` absolute left-0 top-0 h-24 w-full bg-gradient-to-b from-[rgba(30,93,178,0.8)] to-transparent`} />
+
         {compraaqui.map((item, index) => (<div data-aos-once="true" data-aos="fade-down" key={index} className=" p-4 bg-white rounded-md " style={{ boxShadow: `inset 0 0.3rem 0.5rem 0 rgb(0,0,0,0.4)` }}>
             <p className="relative overflow-hidden">
                 <span onClick={() => openInfoBox(item.info, item.image)} className=" cursor-pointer font-serif font-black absolute bottom-1/4 right-2 rounded-full h-9 w-9 hover:bg-[#1e5db2] bg-[#22beeb] border-2 border-solid border-[#22beeb] hover:border-none text-white text-lg flex justify-center items-center shadow-md shadow-[rgba(0,0,0,0.6)] hover:shadow-md hover:shadow-[rgba(0,0,0,0.3)] transition-all duration-300 ease-in-out">i</span>
                 <img src={item.image.src} alt="" className="mx-auto" />
             </p>
-            <p className="mt-8 nowrap"><img src={mutualdeseguros.src} alt="" className="inline-block w-8 mr-2" /> <Link href={`/compraaquimut${item.fundacion}`} className=" transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
-            <p className="mt-4 nowrap"><img src={bcibanco.src} alt="" className="inline-block w-8 mr-2" /> <Link href={`/compraaquibci${item.fundacion}`} className=" transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-4 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-medium" >Compra aquí</Link></p>
+            <p className="mt-8 nowrap"><img src={mutualdeseguros.src} alt="" className="inline-block w-8 mr-2" /> <Link href={`/compraaquimut${item.fundacion}`} className=" transition-all duration-300 ease-in-out text-opacity-80 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-5 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-normal font-FiraSansCondensed" >Compra aquí</Link></p>
+            <p className="mt-4 nowrap"><img src={bcibanco.src} alt="" className="inline-block w-8 mr-2"        /> <Link href={`/compraaquibci${item.fundacion}`} className=" transition-all duration-300 ease-in-out text-opacity-80 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-5 pt-1 pb-2 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-lg md:text-xl no-underline font-normal font-FiraSansCondensed" >Compra aquí</Link></p>
         </div>))}
-    </section>
 
     {showInfoBox && (
             <div data-aos-once="true" data-aos="fade" className=" fixed inset-0 bg-black bg-opacity-40 z-50 backdrop-blur-md  ">

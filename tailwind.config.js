@@ -9,7 +9,7 @@ module.exports = {
               'header': '4rem', // Adjust this value based on the height of your fixed menu
             },
             backgroundImage: {
-                'grid-pattern': "linear-gradient(to bottom, theme('colors.neutral.950 / 0%'), theme('colors.neutral.950 / 100%')), url('/images/noise.png')"
+                gradientA: 'linear-gradient(to bottom, #2560A8 0%, #22beeb 15% 60%, #73D2F4 100%)',
             },
             colors: {
                 neutral: colors.neutral,
@@ -21,6 +21,7 @@ module.exports = {
                 openSans: ['Open Sans', 'Helvetica Neue', 'Arial', ...defaultTheme.fontFamily.sans],
                 sans: ['Raleway', 'Helvetica Neue', 'Arial', ...defaultTheme.fontFamily.sans],
                 serif: ['Noto Serif', 'Georgia', 'serif', ...defaultTheme.fontFamily.serif],
+                FiraSansCondensed: ['Fira Sans Condensed', 'Arial Narrow', 'Avenir Next Condensed', ...defaultTheme.fontFamily.serif],
             },
             boxShadow: {
               'text': '0 2px 0 rgba(0, 0, 0, 0.5)',
