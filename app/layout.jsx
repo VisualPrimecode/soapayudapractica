@@ -1,10 +1,10 @@
 
 
 import '../styles/globals.css';
-import { Footer } from '../components/footer';
+import Footer from '../components/footer';
 import Navbar from '../components/navbar';
 import AOSInitializer from 'components/AOSInitializer';
-import GoogleAnalitics from 'components/googleanalitics';
+import GoogleAnalitics from 'components/GoogleAnalitics';
 
 export const metadata = {
     title: {
