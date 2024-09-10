@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+
 
 import imagen_1 from 'public/image-gallery-1.jpg';
 import imagen_2 from 'public/image-gallery-2.jpg';
@@ -20,23 +20,7 @@ import imagen_15 from 'public/image-gallery-15.jpg';
 import imagen_16 from 'public/image-gallery-16.jpg';
 
 const carrusel = [
-  imagen_1,
-  imagen_2,
-  imagen_3,
-  imagen_4,
-  imagen_5,
-  imagen_6,
-  imagen_7,
-  imagen_8,
-  imagen_9,
-  imagen_10,
-  imagen_11,
-  imagen_12,
-  imagen_13,
-  imagen_14,
-  imagen_15,
-  imagen_16
-];
+  imagen_1, imagen_2, imagen_3, imagen_4, imagen_5, imagen_6, imagen_7, imagen_8, imagen_9, imagen_10, imagen_11, imagen_12, imagen_13, imagen_14, imagen_15, imagen_16 ];
 
 export function CarruselImages() {
   const imageRefs = useRef([]);
