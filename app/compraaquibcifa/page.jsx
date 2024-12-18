@@ -51,7 +51,7 @@ export default async function Page() {
                     </div>
 
                 </div>
-                <p className=" text-center m-8 px-8 max-w-screen-sm mx-auto"><Boton enlace='https://soapweb.bciseguros.cl/web/DatosVehiculo?Convenios=B349DC02D604A91AD5516555C3B66D50' texto='Paga to SOAP aquí' /></p>
+                <p className=" text-center m-8 px-8 max-w-screen-sm mx-auto"><Boton enlace='https://soapweb.bciseguros.cl/web/DatosVehiculo?Convenios=B349DC02D604A91AD5516555C3B66D50' texto='Paga tu SOAP aquí' /></p>
             </section>
 
 

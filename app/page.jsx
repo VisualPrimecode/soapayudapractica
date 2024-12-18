@@ -19,11 +19,7 @@ export default function Page() {
                     <div className="relative block text-center px-8 text-white transition-all duration-300 ease-in-out max-w-xl">
                         <h2 data-aos-once="true" data-aos="flip-right">
                             <Link style={{ lineHeight: `1.3em` }} href="./#compraaqui" className=" mx-auto mb-4 md:mb-6 w-52 md:w-72 lg:w-96 transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-8 pt-6 pb-6 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-2xl md:text-3xl no-underline font-bold " >
-                                Compra tu SOAP y haz tu donación</Link></h2>
-                        <div data-aos-once="true" data-aos="flip-right" className={`w-full border-8 border-solid border-[yellow] mx-auto uppercase block transition-all duration-300 ease-in-out `} style={{ borderRadius: `50%` }}>
-                            <h2 className={` border-2 sm:border-4 md:border-8 border-solid border-[yellow] block px-8 py-5 md:px-10 md:py-8 bg-white bg-opacity-60 text-center font-extrabold text-xl md:text-3xl lg:text-4xl text-[#0d50a8] `} style={{ borderRadius: `50%` }}>
-                                Ayuda con tu<br />seguro obligatorio</h2>
-                        </div>
+                                Dona comprando tu SOAP Aquí</Link></h2>
                     </div>
                 </div>
 

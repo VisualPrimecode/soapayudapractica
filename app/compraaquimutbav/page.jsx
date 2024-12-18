@@ -30,7 +30,7 @@ export default async function Page() {
                         <p className="grid grid-cols-2 text-[#1e5db2] border-dotted border-y-2 border-black border-opacity-30"><span className="inline-block text-left">Moto</span> <span className="inline-block text-right">$46.000</span></p>
                     </div>
                 </div>
-                <p className=" text-center m-8 px-8 max-w-screen-sm mx-auto"><Boton enlace='https://core.mutualdeseguros.cl/soap_ms/pago.php?tipodeventa=243' texto='Paga to SOAP aquí' /></p>
+                <p className=" text-center m-8 px-8 max-w-screen-sm mx-auto"><Boton enlace='https://core.mutualdeseguros.cl/soap_ms/pago.php?tipodeventa=243' texto='Paga tu SOAP aquí' /></p>
             </section>
 
 
