@@ -15,13 +15,30 @@ export default function Page() {
                 <div className={` absolute left-0 bottom-0 h-20 w-full bg-gradient-to-t from-[rgba(0,0,0,0.4)] to-transparent`} />
                 <div className={` absolute left-0 top-0 h-20 w-full bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent`} />
 
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 max-w-6xl w-full h-full flex flex-col items-start justify-center text-left mx-auto ">
-                    <div className="relative block text-center px-8 text-white transition-all duration-300 ease-in-out max-w-xl">
-                        <h2 data-aos-once="true" data-aos="flip-right">
-                            <Link style={{ lineHeight: `1.3em` }} href="./#compraaqui" className=" mx-auto mb-4 md:mb-6 w-52 md:w-72 lg:w-96 transition-all duration-300 ease-in-out text-opacity-90 hover:text-opacity-100 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.6)] inline-block rounded-full px-8 pt-6 pb-6 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-2xl md:text-3xl no-underline font-bold " >
-                                Dona comprando tu SOAP Aquí</Link></h2>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 max-w-6xl w-full h-full flex flex-col items-start justify-center text-left mx-auto">
+                <div className="relative block text-center px-8 text-white transition-all duration-300 ease-in-out max-w-xl">
+                    <h2 data-aos-once="true" data-aos="flip-right">
+                        <Link
+                            style={{ lineHeight: `1.3em` }}
+                            href="./#compraaqui"
+                            className="mx-auto mb-4 md:mb-6 w-70 md:w-90 lg:w-[30rem] transition-all duration-300 ease-in-out text-opacity-90 hover:text-yellow-200 shadow-lg shadow-[rgba(0,0,0,0.3)] hover:shadow-[rgba(0,0,0,0.5)] inline-block rounded-full px-10 pt-6 pb-6 bg-[linear-gradient(#22beeb,#1e5db2)] text-white text-2xl md:text-3xl no-underline font-bold hover:translate-y-[-5px] hover:bg-[linear-gradient(#1e5db2,#22beeb)]"
+                        >
+                            Dona comprando tu SOAP Aquí
+                        </Link>
+                    </h2>
+                    {/* Agregar ícono de mano */}
+                    <div className="mt-4 animate-bounce">
+                        <img
+                            src=".\hand-up-svgrepo-com.svg" // Cambiar por la ruta de tu imagen/ícono
+                            alt="Hand pointing up"
+                            className="mx-auto w-20"
+                            
+                        />
                     </div>
                 </div>
+
+
+</div>
 
             </section>
 
