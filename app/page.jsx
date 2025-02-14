@@ -55,9 +55,19 @@ export default function Page() {
                 <p data-aos-once="true" data-aos="fade-up" className=" text-justify indent-6 hyphens-auto text-xl md:text-2xl font-medium text-opacity-60 text-black mx-7 mt-7 leading-8 md:leading-9">Actualmente, <span className="text-[#1e5db2] font-bold">SOAP</span> <span className="text-[#22beeb] font-bold">AYUDA</span> está presente con convenios en diferentes Instituciones y/o Fundaciones de <span className="text-[#22beeb] font-bold">ámbito social</span>.</p>
             </section>
 
-            <section id="compraaqui" className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 mt-8 md:mt-12 mb-10 md:mb-16 wx-auto duration-300 ease-in-out bg-gradientA px-8 lg:px-4 py-10 max-w-screen-xl mx-auto rounded-none  xl:rounded-xl overflow-hidden">
+            <section
+                id="compraaqui"
+                className="
+                relative
+                mt-8 md:mt-12 mb-10 md:mb-16
+                bg-gradientA px-8 lg:px-4
+                py-10 max-w-screen-xl mx-auto
+                rounded-none xl:rounded-xl
+                "
+            >
                 <Compraaqui />
             </section>
+
             
             <section className="text-center max-w-screen-md w-full mx-auto">
                 <h2 data-aos-once="true" data-aos="fade-up" className="text-3xl md:text-5xl font-bold text-[#22beeb] mt-16 md:mt-28 mb-10 md:mb-16">¿Cómo funciona?</h2>
