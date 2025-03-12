@@ -14,7 +14,7 @@ export default async function Page() {
 
             <section className=" text-center mt-20 mb-24 max-w-screen-lg mx-auto">
                 <p className=" text-center m-4"><img alt='' src={mutualdeseguros.src} className=" mx-auto h-[89px] sm:h-[144px] w-auto duration-300 ease-in-out block"/></p>
-                <h3 className="text-center m-8 font-bold text-lg md:text-xl lg:text-1xl text-[#1e5db2] duration-300 ease-in-out block" >Lista de precios SOAP vehículos particulares (Vigencia desde 01/04/2024)</h3>
+                <h3 className="text-center m-8 font-bold text-lg md:text-xl lg:text-1xl text-[#1e5db2] duration-300 ease-in-out block" >Lista de precios SOAP vehículos particulares</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 my-10 text-center m-4 font-medium text-lg">
                     <div className=" text-left mx-8 text-lg md:text-xl duration-300 ease-in-out block">
                         <p className="grid grid-cols-2 text-[#1e5db2] border-dotted border-t-2 border-black border-opacity-30"><span className="inline-block text-left ">Autos</span> <span className="inline-block text-right">$8.500</span></p>
